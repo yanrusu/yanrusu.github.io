@@ -13,21 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/2025/09/27/hash-function/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2025/12/08/eth-transaction/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+        <meta name="description" content="Transaction 結構   欄位 描述 單位&#x2F;範例    nonce 發送者交易計數器 uint64   maxPriorityFeePerGas 最大優先費（小費給礦工） wei (Gwei 常用)   maxFeePerGas 最大總費（上限） wei   gasLimit 氣體上限 uint64 (基本轉帳 21k)   to 接收地址（EOA 或合約） Address">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hash Function">
-<meta property="og:url" content="https://yanrusu.github.io/2025/09/27/Hash-Function/index.html">
+<meta property="og:title" content="ETH Transaction">
+<meta property="og:url" content="https://yanrusu.github.io/2025/12/08/ETH-Transaction/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
-<meta property="og:description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+<meta property="og:description" content="Transaction 結構   欄位 描述 單位&#x2F;範例    nonce 發送者交易計數器 uint64   maxPriorityFeePerGas 最大優先費（小費給礦工） wei (Gwei 常用)   maxFeePerGas 最大總費（上限） wei   gasLimit 氣體上限 uint64 (基本轉帳 21k)   to 接收地址（EOA 或合約） Address">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-27T08:02:44.000Z">
-<meta property="article:modified_time" content="2026-02-28T08:54:07.734Z">
+<meta property="article:published_time" content="2025-12-08T10:15:42.000Z">
+<meta property="article:modified_time" content="2026-02-28T10:52:30.539Z">
 <meta property="article:author" content="Yan Ru Su">
+<meta property="article:tag" content="Ethereum">
 <meta name="twitter:card" content="summary">
     
     
@@ -40,7 +41,7 @@
     
     <title>
         
-            Hash Function -
+            ETH Transaction -
         
         Ru&#39;s Blog
     </title>
@@ -358,7 +359,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Hash Function</h1>
+                <h1 class="article-title-regular">ETH Transaction</h1>
             
             </div>
             
@@ -378,20 +379,47 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-09-27 16:02:44</span>
-        <span class="mobile">2025-09-27 16:02:44</span>
+        <span class="desktop">2025-12-08 18:15:42</span>
+        <span class="mobile">2025-12-08 18:15:42</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-02-28 16:54:07</span>
-            <span class="mobile">2026-02-28 16:54:07</span>
+            <span class="desktop">2026-02-28 18:52:30</span>
+            <span class="mobile">2026-02-28 18:52:30</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ethereum/">Ethereum</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -409,19 +437,79 @@
 
 
         <div class="article-content markdown-body">
-            <h3 id="雜湊簡介"><a href="#雜湊簡介" class="headerlink" title="雜湊簡介"></a>雜湊簡介</h3><p>把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。</p>
-<p>不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc -&gt; SHA256(abc) -&gt; ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abd -&gt; SHA256(abd) -&gt; a52d159f262b2c6ddb724a61840befc36eb30c88877a4030b65cbe86298449c9</span><br></pre></td></tr></table></figure></div>
-<p>雜湊不算是加密，沒有金鑰，雜湊是不可逆的，無法透過雜湊值推回輸入資料。</p>
-<h3 id="為什麼雜湊是「不可逆」的？"><a href="#為什麼雜湊是「不可逆」的？" class="headerlink" title="為什麼雜湊是「不可逆」的？"></a>為什麼雜湊是「不可逆」的？</h3><h5 id="沒有密鑰"><a href="#沒有密鑰" class="headerlink" title="沒有密鑰"></a>沒有密鑰</h5><p>單純是一個複雜的數學計算，不涉及密鑰</p>
-<h5 id="訊號丟失"><a href="#訊號丟失" class="headerlink" title="訊號丟失"></a>訊號丟失</h5><p>輸出是固定長度的，輸入的值過大，固定長度的輸出無法記錄所有輸入的資訊，有些輸入資訊會被丟棄，就無法透過輸出重建輸入</p>
+            <h3 id="Transaction-結構"><a href="#Transaction-結構" class="headerlink" title="Transaction 結構"></a>Transaction 結構</h3><table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>描述</th>
+<th>單位&#x2F;範例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nonce</td>
+<td>發送者交易計數器</td>
+<td>uint64</td>
+</tr>
+<tr>
+<td>maxPriorityFeePerGas</td>
+<td>最大優先費（小費給礦工）</td>
+<td>wei (Gwei 常用)</td>
+</tr>
+<tr>
+<td>maxFeePerGas</td>
+<td>最大總費（上限）</td>
+<td>wei</td>
+</tr>
+<tr>
+<td>gasLimit</td>
+<td>氣體上限</td>
+<td>uint64 (基本轉帳 21k)</td>
+</tr>
+<tr>
+<td>to</td>
+<td>接收地址（EOA 或合約）</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>value</td>
+<td>轉帳 ETH 數量</td>
+<td>wei</td>
+</tr>
+<tr>
+<td>data</td>
+<td>輸入資料（呼叫合約）</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td>signature (v,r,s)</td>
+<td>ECDSA 簽名</td>
+<td>65 bytes</td>
+</tr>
+</tbody></table>
+<h3 id="sendTransaction-與-sendRawTransaction-差別"><a href="#sendTransaction-與-sendRawTransaction-差別" class="headerlink" title="sendTransaction 與 sendRawTransaction 差別"></a>sendTransaction 與 sendRawTransaction 差別</h3><h5 id="eth-sendTransaction"><a href="#eth-sendTransaction" class="headerlink" title="eth_sendTransaction"></a>eth_sendTransaction</h5><p>發送的是一個未簽名的交易給節點&#x2F;錢包，節點&#x2F;錢包有你的私鑰，用對應的的私鑰來對交易進行簽名&#x2F;錢包。<br>節點&#x2F;錢包做簽名，錢包可以多設計ㄧ步確認。</p>
+<h5 id="eth-sendRawTransaction"><a href="#eth-sendRawTransaction" class="headerlink" title="eth_sendRawTransaction"></a>eth_sendRawTransaction</h5><p>先簽好名，再將交易資料跟簽名給節點驗證，節點只驗證</p>
+<h3 id="Transaction-生命週期"><a href="#Transaction-生命週期" class="headerlink" title="Transaction 生命週期"></a>Transaction 生命週期</h3><p>包交易 -&gt; 簽名 -&gt; 送節點 -&gt; 驗證 （簽名 Nonce 正確 Balance、Gas）-&gt; mempool（交易廣播，每個節點都有自己的pool，驗證交易後才加入自己的 Mempool）-&gt; 節點打包 （從 Mempool 拿，Priority Fee 高的優先）-&gt; 執行交易</p>
+<p>完成狀態修改，生命周期結束</p>
+<h3 id="什麼是-Receipt，與-Transaction-差異"><a href="#什麼是-Receipt，與-Transaction-差異" class="headerlink" title="什麼是 Receipt，與 Transaction 差異"></a>什麼是 Receipt，與 Transaction 差異</h3><p>交易執行後的結果 會記錄有沒有成功，花了多少 Gas<br>Transaction 執行完之後會產生一個 Receipt，可以用來查詢結果</p>
+<h3 id="TransactionResponse-vs-TransactionReceipt"><a href="#TransactionResponse-vs-TransactionReceipt" class="headerlink" title="TransactionResponse vs TransactionReceipt"></a>TransactionResponse vs TransactionReceipt</h3><h5 id="TransactionResponse"><a href="#TransactionResponse" class="headerlink" title="TransactionResponse"></a>TransactionResponse</h5><p>交易發送後節點回傳的初步資訊，代表交易已經被節點驗證，但還沒被執行，因為還沒執行不會有結果。</p>
+<h5 id="TransactionReceipt"><a href="#TransactionReceipt" class="headerlink" title="TransactionReceipt"></a>TransactionReceipt</h5><p>交易執行後生成的收據，代表交易已經被打包進區塊並執行完成，包含結果。</p>
+<h3 id="TX-Hash-的生成邏輯"><a href="#TX-Hash-的生成邏輯" class="headerlink" title="TX Hash 的生成邏輯"></a>TX Hash 的生成邏輯</h3><p>可以先算好，有看到Tx Hash 不代表被執行</p>
+<ol>
+<li>準備交易欄位：依類型排序（如 nonce, maxPriorityFeePerGas, 簽名 v,r,s…等）。<br>​2. RLP 編碼：將欄位轉為 RLP bytes（處理字串、長度前綴，如短字串 &lt;128 用單 byte，長者加 0x80 + len）。<br>​3. keccak-256：tx_hash &#x3D; keccak256(rlp_encoded_bytes)，輸出 32 bytes（64 字元 hex）。<br>​</li>
+</ol>
 
         </div>
 
         
 
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Ethereum/">#Ethereum</a>&nbsp;
+                    </li>
+                
+            </ul>
         
 
         
@@ -432,13 +520,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2025/09/27/%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"
+                        href="/2025/12/29/Function-Selector/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">非對稱式加密</span>
+                                <span class="post-nav-title-item">Function Selector</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -448,10 +536,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2025/09/27/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E6%AF%94%E7%89%B9%E5%B9%A3/"
+                        href="/2025/12/01/%E9%9B%9C%E6%B9%8A%E3%80%81%E5%8A%A0%E5%AF%86%E8%88%87%E6%95%B8%E4%BD%8D%E7%B0%BD%E7%AB%A0/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">區塊鏈與比特幣</span>
+                                <span class="post-nav-title-item">雜湊、加密與數位簽章</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -472,8 +560,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hash Function</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A%E7%B0%A1%E4%BB%8B"><span class="nav-text">雜湊簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9B%9C%E6%B9%8A%E6%98%AF%E3%80%8C%E4%B8%8D%E5%8F%AF%E9%80%86%E3%80%8D%E7%9A%84%EF%BC%9F"><span class="nav-text">為什麼雜湊是「不可逆」的？</span></a></li></ol>
+        <div class="page-title">ETH Transaction</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transaction-%E7%B5%90%E6%A7%8B"><span class="nav-text">Transaction 結構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sendTransaction-%E8%88%87-sendRawTransaction-%E5%B7%AE%E5%88%A5"><span class="nav-text">sendTransaction 與 sendRawTransaction 差別</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transaction-%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="nav-text">Transaction 生命週期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-Receipt%EF%BC%8C%E8%88%87-Transaction-%E5%B7%AE%E7%95%B0"><span class="nav-text">什麼是 Receipt，與 Transaction 差異</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TransactionResponse-vs-TransactionReceipt"><span class="nav-text">TransactionResponse vs TransactionReceipt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TX-Hash-%E7%9A%84%E7%94%9F%E6%88%90%E9%82%8F%E8%BC%AF"><span class="nav-text">TX Hash 的生成邏輯</span></a></li></ol>
 
     </div>
 </div>

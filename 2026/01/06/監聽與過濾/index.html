@@ -13,21 +13,23 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/2025/09/27/hash-function/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2026/01/06/監聽與過濾/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+        <meta name="description" content="過濾尋找過去特定的 Event 1234567891011121314151617181920212223242526272829303132333435363738require(&amp;#x27;dotenv&amp;#x27;).config();const &amp;#123; ethers &amp;#125; &#x3D; require(&quot;hardhat&quot;);const provider &#x3D; new e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hash Function">
-<meta property="og:url" content="https://yanrusu.github.io/2025/09/27/Hash-Function/index.html">
+<meta property="og:title" content="監聽與過濾">
+<meta property="og:url" content="https://yanrusu.github.io/2026/01/06/%E7%9B%A3%E8%81%BD%E8%88%87%E9%81%8E%E6%BF%BE/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
-<meta property="og:description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+<meta property="og:description" content="過濾尋找過去特定的 Event 1234567891011121314151617181920212223242526272829303132333435363738require(&amp;#x27;dotenv&amp;#x27;).config();const &amp;#123; ethers &amp;#125; &#x3D; require(&quot;hardhat&quot;);const provider &#x3D; new e">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-27T08:02:44.000Z">
-<meta property="article:modified_time" content="2026-02-28T08:54:07.734Z">
+<meta property="article:published_time" content="2026-01-06T13:58:29.000Z">
+<meta property="article:modified_time" content="2026-02-28T14:05:05.458Z">
 <meta property="article:author" content="Yan Ru Su">
+<meta property="article:tag" content="Ethereum">
+<meta property="article:tag" content="Smart Contract">
 <meta name="twitter:card" content="summary">
     
     
@@ -40,7 +42,7 @@
     
     <title>
         
-            Hash Function -
+            監聽與過濾 -
         
         Ru&#39;s Blog
     </title>
@@ -358,7 +360,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Hash Function</h1>
+                <h1 class="article-title-regular">監聽與過濾</h1>
             
             </div>
             
@@ -378,20 +380,51 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-09-27 16:02:44</span>
-        <span class="mobile">2025-09-27 16:02:44</span>
+        <span class="desktop">2026-01-06 21:58:29</span>
+        <span class="mobile">2026-01-06 21:58:29</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-02-28 16:54:07</span>
-            <span class="mobile">2026-02-28 16:54:07</span>
+            <span class="desktop">2026-02-28 22:05:05</span>
+            <span class="mobile">2026-02-28 22:05:05</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ethereum/">Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Smart-Contract/">Smart Contract</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -409,19 +442,26 @@
 
 
         <div class="article-content markdown-body">
-            <h3 id="雜湊簡介"><a href="#雜湊簡介" class="headerlink" title="雜湊簡介"></a>雜湊簡介</h3><p>把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。</p>
-<p>不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc -&gt; SHA256(abc) -&gt; ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abd -&gt; SHA256(abd) -&gt; a52d159f262b2c6ddb724a61840befc36eb30c88877a4030b65cbe86298449c9</span><br></pre></td></tr></table></figure></div>
-<p>雜湊不算是加密，沒有金鑰，雜湊是不可逆的，無法透過雜湊值推回輸入資料。</p>
-<h3 id="為什麼雜湊是「不可逆」的？"><a href="#為什麼雜湊是「不可逆」的？" class="headerlink" title="為什麼雜湊是「不可逆」的？"></a>為什麼雜湊是「不可逆」的？</h3><h5 id="沒有密鑰"><a href="#沒有密鑰" class="headerlink" title="沒有密鑰"></a>沒有密鑰</h5><p>單純是一個複雜的數學計算，不涉及密鑰</p>
-<h5 id="訊號丟失"><a href="#訊號丟失" class="headerlink" title="訊號丟失"></a>訊號丟失</h5><p>輸出是固定長度的，輸入的值過大，固定長度的輸出無法記錄所有輸入的資訊，有些輸入資訊會被丟棄，就無法透過輸出重建輸入</p>
-
+            <h3 id="過濾"><a href="#過濾" class="headerlink" title="過濾"></a>過濾</h3><p>尋找過去特定的 Event</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;dotenv&#x27;</span>).<span class="title function_">config</span>();</span><br><span class="line"><span class="keyword">const</span> &#123; ethers &#125; = <span class="built_in">require</span>(<span class="string">&quot;hardhat&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> provider = <span class="keyword">new</span> ethers.<span class="title class_">JsonRpcProvider</span>(<span class="string">`https://eth-mainnet.g.alchemy.com/v2/<span class="subst">$&#123;process.env.ALCHEMY_API_KEY&#125;</span>`</span>);</span><br><span class="line"><span class="keyword">const</span> contractaddr = <span class="string">&quot;0xdAC17F958D2ee523a2206206994597C13D831ec7&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> contractABI = [<span class="string">&quot;event Transfer(address indexed from, address indexed to, uint256 value)&quot;</span>];</span><br><span class="line"><span class="keyword">const</span> fromblock = <span class="number">24230331</span></span><br><span class="line"><span class="keyword">const</span> toblock = <span class="number">24230332</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="comment">//作法1</span></span><br><span class="line">    <span class="keyword">const</span> contract = <span class="keyword">new</span> ethers.<span class="title class_">Contract</span>(contractaddr,contractABI,provider);</span><br><span class="line">    <span class="keyword">const</span> log = <span class="keyword">await</span> contract.<span class="title function_">queryFilter</span>(contract.<span class="property">filters</span>.<span class="title class_">Transfer</span>(<span class="literal">null</span>, <span class="literal">null</span>),fromblock,toblock);</span><br><span class="line">    <span class="comment">// const log = await contract.queryFilter(&quot;Transfer&quot;,fromblock,toblock)</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;From:&quot;</span>, log[<span class="number">0</span>].<span class="property">args</span>[<span class="number">0</span>], <span class="string">&quot;To:&quot;</span>, log[<span class="number">0</span>].<span class="property">args</span>[<span class="number">1</span>], <span class="string">&quot;Value:&quot;</span>, <span class="title class_">Number</span>(log[<span class="number">0</span>].<span class="property">args</span>[<span class="number">2</span>]/<span class="number">1000000n</span>));</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(log[<span class="number">0</span>]);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//作法2</span></span><br><span class="line">    <span class="keyword">const</span> iface = <span class="keyword">new</span> ethers.<span class="title class_">Interface</span>(contractABI);</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">from</span> = <span class="string">&quot;0x3C02290922a3618A4646E3BbCa65853eA45FE7C6&quot;</span>;</span><br><span class="line">    <span class="keyword">const</span> to = <span class="string">&quot;0xFAdEf4c677C2f31F43f09e239b34D0F6905a3085&quot;</span></span><br><span class="line">    <span class="keyword">const</span> filter = &#123;</span><br><span class="line">    <span class="attr">address</span>: contractaddr,</span><br><span class="line">    <span class="attr">topics</span>: [</span><br><span class="line">        iface.<span class="title function_">getEvent</span>(<span class="string">&quot;Transfer&quot;</span>).<span class="property">topicHash</span>, </span><br><span class="line">        ethers.<span class="title function_">zeroPadValue</span>(<span class="keyword">from</span>, <span class="number">32</span>),</span><br><span class="line">        ethers.<span class="title function_">zeroPadValue</span>(to, <span class="number">32</span>),</span><br><span class="line">    ],</span><br><span class="line">        <span class="attr">fromBlock</span>: fromblock,</span><br><span class="line">        <span class="attr">toBlock</span>: toblock</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> log = <span class="keyword">await</span> provider.<span class="title function_">getLogs</span>(filter);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(log[<span class="number">0</span>]);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Number</span>(log[<span class="number">0</span>].<span class="property">data</span>) / <span class="number">1e6</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">main</span>().<span class="title function_">catch</span>(<span class="variable language_">console</span>.<span class="property">error</span>);   </span><br></pre></td></tr></table></figure></div>
+<h3 id="監聽"><a href="#監聽" class="headerlink" title="監聽"></a>監聽</h3><p>即時監聽鏈上事件</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">listen</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> provider = <span class="keyword">new</span> ethers.<span class="title class_">WebSocketProvider</span>(<span class="string">`https://eth-mainnet.g.alchemy.com/v2/<span class="subst">$&#123;process.env.ALCHEMY_API_KEY&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">const</span> contract = <span class="keyword">new</span> ethers.<span class="title class_">Contract</span>(contractaddr,contractABI,provider);</span><br><span class="line">    contract.<span class="title function_">once</span>(<span class="string">&#x27;Transfer&#x27;</span>, <span class="function">(<span class="params"><span class="keyword">from</span>, to, value, event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(&#123;</span><br><span class="line">      <span class="keyword">from</span>,</span><br><span class="line">      to,</span><br><span class="line">      <span class="attr">value</span>: ethers.<span class="title function_">formatUnits</span>(value, <span class="number">6</span>), </span><br><span class="line">      <span class="attr">blockNumber</span>: event.<span class="property">log</span>.<span class="property">blockNumber</span>,</span><br><span class="line">      <span class="attr">txHash</span>: event.<span class="property">log</span>.<span class="property">transactionHash</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">listen</span>().<span class="title function_">catch</span>(<span class="variable language_">console</span>.<span class="property">error</span>)</span><br></pre></td></tr></table></figure></div>
         </div>
 
         
 
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Ethereum/">#Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Smart-Contract/">#Smart Contract</a>&nbsp;
+                    </li>
+                
+            </ul>
         
 
         
@@ -432,13 +472,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2025/09/27/%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"
+                        href="/2026/01/15/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B8/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">非對稱式加密</span>
+                                <span class="post-nav-title-item">特殊函數</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -448,10 +488,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2025/09/27/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E6%AF%94%E7%89%B9%E5%B9%A3/"
+                        href="/2026/01/06/Contract-Event/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">區塊鏈與比特幣</span>
+                                <span class="post-nav-title-item">Contract Event</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -472,8 +512,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hash Function</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A%E7%B0%A1%E4%BB%8B"><span class="nav-text">雜湊簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9B%9C%E6%B9%8A%E6%98%AF%E3%80%8C%E4%B8%8D%E5%8F%AF%E9%80%86%E3%80%8D%E7%9A%84%EF%BC%9F"><span class="nav-text">為什麼雜湊是「不可逆」的？</span></a></li></ol>
+        <div class="page-title">監聽與過濾</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8E%E6%BF%BE"><span class="nav-text">過濾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%A3%E8%81%BD"><span class="nav-text">監聽</span></a></li></ol>
 
     </div>
 </div>

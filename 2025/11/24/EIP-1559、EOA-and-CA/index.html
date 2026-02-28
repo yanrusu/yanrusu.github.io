@@ -13,21 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/2025/09/27/hash-function/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2025/11/24/eip-1559、eoa-and-ca/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+        <meta name="description" content="基本手續費邏輯維持區塊鏈工作，交易發起方會發送手續費給礦工當作獎勵。 交易發起方在發送交易時需要決定 Gas Price 以及 Gas limit，Transaction Fee 基本上就等於 Gas Price*Gas Limit 並且以 ether 為單位，然而實際上的情況更為複雜。Gas Price 一單位 Gas 的價格（以 Wei 計價 1 wei&#x3D;10⁻¹⁸ETH）。會由三個">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hash Function">
-<meta property="og:url" content="https://yanrusu.github.io/2025/09/27/Hash-Function/index.html">
+<meta property="og:title" content="EIP-1559、EOA and CA">
+<meta property="og:url" content="https://yanrusu.github.io/2025/11/24/EIP-1559%E3%80%81EOA-and-CA/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
-<meta property="og:description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+<meta property="og:description" content="基本手續費邏輯維持區塊鏈工作，交易發起方會發送手續費給礦工當作獎勵。 交易發起方在發送交易時需要決定 Gas Price 以及 Gas limit，Transaction Fee 基本上就等於 Gas Price*Gas Limit 並且以 ether 為單位，然而實際上的情況更為複雜。Gas Price 一單位 Gas 的價格（以 Wei 計價 1 wei&#x3D;10⁻¹⁸ETH）。會由三個">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-27T08:02:44.000Z">
-<meta property="article:modified_time" content="2026-02-28T08:54:07.734Z">
+<meta property="article:published_time" content="2025-11-24T09:04:15.000Z">
+<meta property="article:modified_time" content="2026-02-28T09:49:31.980Z">
 <meta property="article:author" content="Yan Ru Su">
+<meta property="article:tag" content="Ethereum">
 <meta name="twitter:card" content="summary">
     
     
@@ -40,7 +41,7 @@
     
     <title>
         
-            Hash Function -
+            EIP-1559、EOA and CA -
         
         Ru&#39;s Blog
     </title>
@@ -358,7 +359,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Hash Function</h1>
+                <h1 class="article-title-regular">EIP-1559、EOA and CA</h1>
             
             </div>
             
@@ -378,20 +379,47 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-09-27 16:02:44</span>
-        <span class="mobile">2025-09-27 16:02:44</span>
+        <span class="desktop">2025-11-24 17:04:15</span>
+        <span class="mobile">2025-11-24 17:04:15</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-02-28 16:54:07</span>
-            <span class="mobile">2026-02-28 16:54:07</span>
+            <span class="desktop">2026-02-28 17:49:31</span>
+            <span class="mobile">2026-02-28 17:49:31</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ethereum/">Ethereum</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -409,19 +437,87 @@
 
 
         <div class="article-content markdown-body">
-            <h3 id="雜湊簡介"><a href="#雜湊簡介" class="headerlink" title="雜湊簡介"></a>雜湊簡介</h3><p>把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。</p>
-<p>不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc -&gt; SHA256(abc) -&gt; ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abd -&gt; SHA256(abd) -&gt; a52d159f262b2c6ddb724a61840befc36eb30c88877a4030b65cbe86298449c9</span><br></pre></td></tr></table></figure></div>
-<p>雜湊不算是加密，沒有金鑰，雜湊是不可逆的，無法透過雜湊值推回輸入資料。</p>
-<h3 id="為什麼雜湊是「不可逆」的？"><a href="#為什麼雜湊是「不可逆」的？" class="headerlink" title="為什麼雜湊是「不可逆」的？"></a>為什麼雜湊是「不可逆」的？</h3><h5 id="沒有密鑰"><a href="#沒有密鑰" class="headerlink" title="沒有密鑰"></a>沒有密鑰</h5><p>單純是一個複雜的數學計算，不涉及密鑰</p>
-<h5 id="訊號丟失"><a href="#訊號丟失" class="headerlink" title="訊號丟失"></a>訊號丟失</h5><p>輸出是固定長度的，輸入的值過大，固定長度的輸出無法記錄所有輸入的資訊，有些輸入資訊會被丟棄，就無法透過輸出重建輸入</p>
+            <h3 id="基本手續費邏輯"><a href="#基本手續費邏輯" class="headerlink" title="基本手續費邏輯"></a>基本手續費邏輯</h3><p>維持區塊鏈工作，交易發起方會發送手續費給礦工當作獎勵。</p>
+<p>交易發起方在發送交易時需要決定 Gas Price 以及 Gas limit，Transaction Fee 基本上就等於 Gas Price*Gas Limit 並且以 ether 為單位，然而實際上的情況更為複雜。Gas Price 一單位 Gas 的價格（以 Wei 計價 1 wei&#x3D;10⁻¹⁸ETH）。會由三個單位決定，分別是 Base Fee、 Max Priority Fee 以及max Fee。 首先 Base Fee 是區塊目前交易的基本費，使用後會燃燒掉，不會發給礦工，做一個通縮的機制，他有會根據鏈上交易數量自動調整。再來是兩個可以自己設定手續費的欄位，分別 Max Priority Fee 是付給礦工的最大手續費，由於礦工能拿到獎勵，因此會優先執行交易也會較快完成。最後是 Max fee 是設定一單位 Gas 的最大值，避免當 Base Fee 過高時可以確保交易在指定的價格下。因此 Gas Price的公式是 </p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">min(Max Fee, Max Priority Fee + Base Fee)</span><br></pre></td></tr></table></figure></div>
+<p>另一個計算重要的值是 Gas Limit， Gas Limit 是 Gas單位，代表的是ㄧ筆交易最多願意付出多少個 Gas ，然而實際上用多少單位根據操作，可能只是單純發一筆交易或是你的合約執行了多次寫入等等（基本交易是21000），因此我們會想設定一個 Gas Limit來決定這個合約的最大 Gas 單位，一方面可以估算會用到多少 Gas 另一方面可以避免操作失誤消耗大量 Gas，所以一個交易最終的使用量是 Usage by Txn。</p>
+<p>前面介紹了 Gas Price 以及 Gas Limit，因此在發送一筆交易時，會先確認你的帳戶餘額是否足夠支付該筆交易的最大手續費，也就是 Gas Price * Gas Limit ，用戶也無法設置超出其帳戶餘額的 Gas，這是為了避免發送者在交易過程中破產無法支付 Gas 費用。</p>
+<p>在執行交易時分為三種情況</p>
+<p>1.Gas Limit &#x3D;&#x3D; Usage by Txn<br>剛好用完</p>
+<p>2.Gas Limit &gt; Usage by Txn<br>(Gas Limit - Usage by Txn) * Gas Price 退還給發送者 (Txn Savings Fee)</p>
+<p>3.Gas Limit &lt; Usage by txn<br>消耗到 Gas Limit 為止交易會失敗，礦工執行到一半就把這筆記錄丟掉，已使用的 Gas 不退回。燒掉的燒掉，給礦工的給礦工。</p>
+<h3 id="實際計算"><a href="#實際計算" class="headerlink" title="實際計算"></a>實際計算</h3><p>假設：<br>Gas Limit &#x3D; 21,000<br>Base Fee &#x3D; 2 Gwei<br>Priority Fee &#x3D; 1 Gwei<br>Max Fee &#x3D; 5Gwei<br>Gas Price &#x3D; 3 Gwei</p>
+<p>預扣手續費 3*21000 Gwei，如果交易過程全部花完</p>
+<p>Base Fee * Usage by Txn &#x3D; 2 × 21,000 &#x3D; 42,000 Gwei → 燒掉<br>Priority Fee * Gas Used &#x3D; 1 × 21,000 &#x3D; 21,000 Gwei → 礦工收入</p>
+<h3 id="節點手續費"><a href="#節點手續費" class="headerlink" title="節點手續費"></a>節點手續費</h3><p>節點的實際手續費，可能出現base過高，就會優先將手續費支付給基本區塊手續費</p>
+<p>Priority Fee &#x3D; min(Max Priority Fee, Max Fee − Base Fee)</p>
+<h3 id="交易優先順序"><a href="#交易優先順序" class="headerlink" title="交易優先順序"></a>交易優先順序</h3><p>順序由有記帳權的節點控制，一般來說節點會優先執行 Priority Fee 高的交易。某些特殊情況例如，前置交易攻擊。</p>
+<h3 id="區塊Gas限制"><a href="#區塊Gas限制" class="headerlink" title="區塊Gas限制"></a>區塊Gas限制</h3><p>區塊 Gas 限制是區塊中允許的最大 Gas 量，用於確定區塊中可以容納的交易數量。例如，假設我們有5個交易，其中每個交易的 Gas 為10、20、30、40和50。如果區塊 Gas 限制為100，那麼前四個交易可以適合該區塊，而交易5必須等待未來的區塊。節點可以自行決定順序，例如40 50 10。</p>
+<h3 id="目前一個區塊最大的Gas"><a href="#目前一個區塊最大的Gas" class="headerlink" title="目前一個區塊最大的Gas"></a>目前一個區塊最大的Gas</h3><p><a class="link"   target="_blank" rel="noopener" href="https://etherscan.io/block/23980650" >Ethereum Blocks #23980650 | Etherscan <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>可以在 etherscan 看到目前的最大 Gas Limit，目前為 60,000,000 60M</p>
+<h3 id="Gas-Limit-調整"><a href="#Gas-Limit-調整" class="headerlink" title="Gas Limit 調整"></a>Gas Limit 調整</h3><p>節點可以微調下一個區塊的 Gas Limit，一次可以向上或向下調整，調整上限是1&#x2F;1024（0.0976％）。例如目前區塊60M，如果想要向上調最多就是 60,000,000 + 60,000,000 &#x2F; 1204 &#x3D; 60,000,000 + 58593，若向下就是變號  60,000,000 - 58593</p>
+<p>公式<br>Pre_Gas_Limit &#x3D; 前一個區塊 Gas Limit<br>Max_Delta &#x3D; Pre_Gas_Limit &#x2F; 1024<br>New_Gas_Limit &#x3D; Pre_Gas_Limit + 調整量（±Max_Delta）</p>
+<h3 id="如何動態計算下個區塊的-Gas-是多少？-Base-Fee-調整"><a href="#如何動態計算下個區塊的-Gas-是多少？-Base-Fee-調整" class="headerlink" title="如何動態計算下個區塊的 Gas 是多少？ Base Fee 調整"></a>如何動態計算下個區塊的 Gas 是多少？ Base Fee 調整</h3><p>Base Fee 會根據上一個區塊的 Gas 使用率（Gas Limit 與 Gas Used）動態調整，先算出一個 Gas target 的值他是上個區塊 Gas Limit 的一半，根據 Gas Used與 Gas Limit 的關係來計算下個區塊的 Base Fee 會向上還是向下調。</p>
+<p>Gas Used &gt; Gas target 網路擁擠，調高Base Fee 抑制交易數量<br>Gas Used &lt; Gas target 網路空閒，調低Base Fee 增加交易數量<br>Gas Used &#x3D;&#x3D; Gas target 不調整</p>
+<p>而一次 Base Fee 調整的最大上限是12.5%</p>
+<h3 id="解釋這筆Tx的這些欄位"><a href="#解釋這筆Tx的這些欄位" class="headerlink" title="解釋這筆Tx的這些欄位"></a>解釋這筆Tx的這些欄位</h3><p><a class="link"   target="_blank" rel="noopener" href="https://etherscan.io/tx/0xb0572fde0bc6319d9b750a9eca8a04b75eca9ce2250ff976107a82fdf4875cf1" >https://etherscan.io/tx/0xb0572fde0bc6319d9b750a9eca8a04b75eca9ce2250ff976107a82fdf4875cf1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h5 id="Value"><a href="#Value" class="headerlink" title="Value"></a>Value</h5><p>0.052434437895476768 ETH<br>轉帳的ETH數量</p>
+<h5 id="Transaction-Fee"><a href="#Transaction-Fee" class="headerlink" title="Transaction Fee"></a>Transaction Fee</h5><p>0.000043942075947 ETH<br>交易實際付出的手續費</p>
+<h5 id="Gas-Price"><a href="#Gas-Price" class="headerlink" title="Gas Price"></a>Gas Price</h5><p>2.092479807 Gwei<br>實際每單位 Gas 的價格</p>
+<h5 id="Gas-limit-Usage-by-Txn"><a href="#Gas-limit-Usage-by-Txn" class="headerlink" title="Gas limit &amp; Usage by Txn"></a>Gas limit &amp; Usage by Txn</h5><p>21,000 | 21,000 (100%)<br>手續費的單位上限 實際上使用的手續費</p>
+<h5 id="Gas-Fees"><a href="#Gas-Fees" class="headerlink" title="Gas Fees"></a>Gas Fees</h5><p>Base: 2.092479807 Gwei |Max: 2.092479807 Gwei |Max Priority: 0 ETH</p>
+<h5 id="Burnt-Txn-Savings-Fee"><a href="#Burnt-Txn-Savings-Fee" class="headerlink" title="Burnt &amp; Txn Savings Fee"></a>Burnt &amp; Txn Savings Fee</h5><p>🔥 Burnt: 0.000043942075947 ETH ($0.13)|💸 Txn Savings: 0 ETH ($0.00)<br>燒毀與剩下的手續費</p>
+<h3 id="賬戶與合約的差異"><a href="#賬戶與合約的差異" class="headerlink" title="賬戶與合約的差異"></a>賬戶與合約的差異</h3><h5 id="帳戶-Externally-Owned-Account-EOA"><a href="#帳戶-Externally-Owned-Account-EOA" class="headerlink" title="帳戶 Externally Owned Account EOA"></a>帳戶 Externally Owned Account EOA</h5><p>有私鑰才能控制，可以發送交易，呼叫合約，就只是一個地址</p>
+<h5 id="合約-Contract-Account-CA"><a href="#合約-Contract-Account-CA" class="headerlink" title="合約 Contract Account, CA"></a>合約 Contract Account, CA</h5><p>智能合約帳戶是由EOA部署在區塊鏈上的程式，不能發送交易，沒有私鑰由程式邏輯控制，負責執行合約，回應呼叫，不能主動發起交易，只能被其他賬戶呼叫。<br><br></p>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>賬戶（EOA）</th>
+<th>合約（Contract）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>控制方式</td>
+<td>私鑰</td>
+<td>程式邏輯</td>
+</tr>
+<tr>
+<td>能否主動發起交易</td>
+<td>可以</td>
+<td>不可以（只能被觸發）</td>
+</tr>
+<tr>
+<td>有無代碼</td>
+<td>無</td>
+<td>有</td>
+</tr>
+<tr>
+<td>收款 &#x2F; 支付</td>
+<td>可收可付</td>
+<td>可收可付，但支付需程式觸發</td>
+</tr>
+</tbody></table>
+<h3 id="帳戶欄位"><a href="#帳戶欄位" class="headerlink" title="帳戶欄位"></a>帳戶欄位</h3><p>以太坊帳戶有四個欄位</p>
+<h5 id="Nonce"><a href="#Nonce" class="headerlink" title="Nonce"></a>Nonce</h5><p><a href="/2025/11/10/What-is-nonce/">計數器</a></p>
+<h5 id="Balance"><a href="#Balance" class="headerlink" title="Balance"></a>Balance</h5><p>餘額 ETH</p>
+<h5 id="codehash"><a href="#codehash" class="headerlink" title="codehash"></a>codehash</h5><p>程式碼雜湊值 EOA沒有</p>
+<h5 id="storageroot"><a href="#storageroot" class="headerlink" title="storageroot"></a>storageroot</h5><p>儲存空間 預設空白  EOA沒有</p>
+<h3 id="怎麼判斷帳戶跟合約"><a href="#怎麼判斷帳戶跟合約" class="headerlink" title="怎麼判斷帳戶跟合約"></a>怎麼判斷帳戶跟合約</h3><p>看他有沒有程式碼，有的話是CA，沒有的話是EOA</p>
+<hr>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a class="link"   target="_blank" rel="noopener" href="https://ethereum.org/zh-tw/developers/docs/accounts/" >以太坊帳戶 | ethereum.org <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://cypherpunks-core.github.io/ethereumbook_zh/13.html" >https://cypherpunks-core.github.io/ethereumbook_zh/13.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://learnblockchain.cn/article/8586" >https://learnblockchain.cn/article/8586 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://fmstudio.blog/what-is-gasfee-calculation-2025/" >https://fmstudio.blog/what-is-gasfee-calculation-2025/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1891179120102179211" >https://zhuanlan.zhihu.com/p/1891179120102179211 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
         </div>
 
         
 
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Ethereum/">#Ethereum</a>&nbsp;
+                    </li>
+                
+            </ul>
         
 
         
@@ -432,13 +528,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2025/09/27/%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"
+                        href="/2025/11/24/%E5%88%A4%E6%96%B7%E5%9C%B0%E5%9D%80%E6%98%AF%E5%B8%B3%E6%88%B6%E6%88%96%E5%90%88%E7%B4%84/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">非對稱式加密</span>
+                                <span class="post-nav-title-item">判斷地址是帳戶或合約</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -448,10 +544,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2025/09/27/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E6%AF%94%E7%89%B9%E5%B9%A3/"
+                        href="/2025/11/17/Verify-Contract/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">區塊鏈與比特幣</span>
+                                <span class="post-nav-title-item">Verify Contract</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -472,8 +568,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hash Function</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A%E7%B0%A1%E4%BB%8B"><span class="nav-text">雜湊簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9B%9C%E6%B9%8A%E6%98%AF%E3%80%8C%E4%B8%8D%E5%8F%AF%E9%80%86%E3%80%8D%E7%9A%84%EF%BC%9F"><span class="nav-text">為什麼雜湊是「不可逆」的？</span></a></li></ol>
+        <div class="page-title">EIP-1559、EOA and CA</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%89%8B%E7%BA%8C%E8%B2%BB%E9%82%8F%E8%BC%AF"><span class="nav-text">基本手續費邏輯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%A6%E9%9A%9B%E8%A8%88%E7%AE%97"><span class="nav-text">實際計算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%80%E9%BB%9E%E6%89%8B%E7%BA%8C%E8%B2%BB"><span class="nav-text">節點手續費</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%98%93%E5%84%AA%E5%85%88%E9%A0%86%E5%BA%8F"><span class="nav-text">交易優先順序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E5%A1%8AGas%E9%99%90%E5%88%B6"><span class="nav-text">區塊Gas限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E4%B8%80%E5%80%8B%E5%8D%80%E5%A1%8A%E6%9C%80%E5%A4%A7%E7%9A%84Gas"><span class="nav-text">目前一個區塊最大的Gas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gas-Limit-%E8%AA%BF%E6%95%B4"><span class="nav-text">Gas Limit 調整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%8B%95%E6%85%8B%E8%A8%88%E7%AE%97%E4%B8%8B%E5%80%8B%E5%8D%80%E5%A1%8A%E7%9A%84-Gas-%E6%98%AF%E5%A4%9A%E5%B0%91%EF%BC%9F-Base-Fee-%E8%AA%BF%E6%95%B4"><span class="nav-text">如何動態計算下個區塊的 Gas 是多少？ Base Fee 調整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%87%8B%E9%80%99%E7%AD%86Tx%E7%9A%84%E9%80%99%E4%BA%9B%E6%AC%84%E4%BD%8D"><span class="nav-text">解釋這筆Tx的這些欄位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%AC%E6%88%B6%E8%88%87%E5%90%88%E7%B4%84%E7%9A%84%E5%B7%AE%E7%95%B0"><span class="nav-text">賬戶與合約的差異</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B3%E6%88%B6%E6%AC%84%E4%BD%8D"><span class="nav-text">帳戶欄位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E9%BA%BC%E5%88%A4%E6%96%B7%E5%B8%B3%E6%88%B6%E8%B7%9F%E5%90%88%E7%B4%84"><span class="nav-text">怎麼判斷帳戶跟合約</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-text">參考資料</span></a></li></ol>
 
     </div>
 </div>

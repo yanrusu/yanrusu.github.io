@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/2025/09/27/hash-function/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2025/12/01/雜湊、加密與數位簽章/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+        <meta name="description" content="雜湊和加密有什麼不同？    加密 雜湊    金鑰 有 無   可逆性 可 不可   加密加密是可逆的，可以透過金鑰加密或解密，有分為非對稱加密與對稱加密加密，透過一個金鑰將明文變成密文解密，透過密鑰將密文解密明文 非對稱性加密公鑰與私鑰私鑰（Private Key）：只有自己知道的鑰匙公鑰（Public Key）：公開給所有人的鑰匙 加解密流程用公鑰加密，對應的私鑰解密 1明文 -&gt; 公">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hash Function">
-<meta property="og:url" content="https://yanrusu.github.io/2025/09/27/Hash-Function/index.html">
+<meta property="og:title" content="雜湊、加密與數位簽章">
+<meta property="og:url" content="https://yanrusu.github.io/2025/12/01/%E9%9B%9C%E6%B9%8A%E3%80%81%E5%8A%A0%E5%AF%86%E8%88%87%E6%95%B8%E4%BD%8D%E7%B0%BD%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
-<meta property="og:description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+<meta property="og:description" content="雜湊和加密有什麼不同？    加密 雜湊    金鑰 有 無   可逆性 可 不可   加密加密是可逆的，可以透過金鑰加密或解密，有分為非對稱加密與對稱加密加密，透過一個金鑰將明文變成密文解密，透過密鑰將密文解密明文 非對稱性加密公鑰與私鑰私鑰（Private Key）：只有自己知道的鑰匙公鑰（Public Key）：公開給所有人的鑰匙 加解密流程用公鑰加密，對應的私鑰解密 1明文 -&gt; 公">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-27T08:02:44.000Z">
-<meta property="article:modified_time" content="2026-02-28T08:54:07.734Z">
+<meta property="article:published_time" content="2025-12-01T09:57:21.000Z">
+<meta property="article:modified_time" content="2026-02-28T10:35:11.736Z">
 <meta property="article:author" content="Yan Ru Su">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            Hash Function -
+            雜湊、加密與數位簽章 -
         
         Ru&#39;s Blog
     </title>
@@ -358,7 +358,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Hash Function</h1>
+                <h1 class="article-title-regular">雜湊、加密與數位簽章</h1>
             
             </div>
             
@@ -378,19 +378,35 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-09-27 16:02:44</span>
-        <span class="mobile">2025-09-27 16:02:44</span>
+        <span class="desktop">2025-12-01 17:57:21</span>
+        <span class="mobile">2025-12-01 17:57:21</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-02-28 16:54:07</span>
-            <span class="mobile">2026-02-28 16:54:07</span>
+            <span class="desktop">2026-02-28 18:35:11</span>
+            <span class="mobile">2026-02-28 18:35:11</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
     
     
 
@@ -409,14 +425,59 @@
 
 
         <div class="article-content markdown-body">
-            <h3 id="雜湊簡介"><a href="#雜湊簡介" class="headerlink" title="雜湊簡介"></a>雜湊簡介</h3><p>把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。</p>
-<p>不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc -&gt; SHA256(abc) -&gt; ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><br></pre></td></tr></table></figure></div>
+            <h3 id="雜湊和加密有什麼不同？"><a href="#雜湊和加密有什麼不同？" class="headerlink" title="雜湊和加密有什麼不同？"></a>雜湊和加密有什麼不同？</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>加密</th>
+<th>雜湊</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>金鑰</td>
+<td>有</td>
+<td>無</td>
+</tr>
+<tr>
+<td>可逆性</td>
+<td>可</td>
+<td>不可</td>
+</tr>
+</tbody></table>
+<h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>加密是可逆的，可以透過金鑰加密或解密，有分為非對稱加密與對稱加密<br>加密，透過一個金鑰將明文變成密文<br>解密，透過密鑰將密文解密明文</p>
+<h3 id="非對稱性加密"><a href="#非對稱性加密" class="headerlink" title="非對稱性加密"></a>非對稱性加密</h3><h5 id="公鑰與私鑰"><a href="#公鑰與私鑰" class="headerlink" title="公鑰與私鑰"></a>公鑰與私鑰</h5><p>私鑰（Private Key）：只有自己知道的鑰匙<br>公鑰（Public Key）：公開給所有人的鑰匙</p>
+<h6 id="加解密流程"><a href="#加解密流程" class="headerlink" title="加解密流程"></a>加解密流程</h6><p>用公鑰加密，對應的私鑰解密</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">明文 -&gt; 公鑰 -&gt; 密文 -&gt; 私鑰 -&gt; 明文</span><br></pre></td></tr></table></figure></div>
+<h3 id="簽名"><a href="#簽名" class="headerlink" title="簽名"></a>簽名</h3><p>驗證訊息，用私鑰簽名，用公鑰驗證</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">訊息 -&gt; 私鑰簽名 -&gt; 簽章</span><br><span class="line">簽章 + 訊息 -&gt; 公鑰 -&gt; 驗證是否為你</span><br></pre></td></tr></table></figure></div>
+<h3 id="簽名與加密的差別"><a href="#簽名與加密的差別" class="headerlink" title="簽名與加密的差別"></a>簽名與加密的差別</h3><h4 id="加密-1"><a href="#加密-1" class="headerlink" title="加密"></a>加密</h4><p>內容保密</p>
+<h4 id="簽名-1"><a href="#簽名-1" class="headerlink" title="簽名"></a>簽名</h4><p>身份驗證 防竄改</p>
+<h3 id="雜湊"><a href="#雜湊" class="headerlink" title="雜湊"></a>雜湊</h3><p>把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc -&gt; SHA256 -&gt; ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><br></pre></td></tr></table></figure></div>
 
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abd -&gt; SHA256(abd) -&gt; a52d159f262b2c6ddb724a61840befc36eb30c88877a4030b65cbe86298449c9</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abd -&gt; SHA256 -&gt; a52d159f262b2c6ddb724a61840befc36eb30c88877a4030b65cbe86298449c9</span><br></pre></td></tr></table></figure></div>
+
 <p>雜湊不算是加密，沒有金鑰，雜湊是不可逆的，無法透過雜湊值推回輸入資料。</p>
-<h3 id="為什麼雜湊是「不可逆」的？"><a href="#為什麼雜湊是「不可逆」的？" class="headerlink" title="為什麼雜湊是「不可逆」的？"></a>為什麼雜湊是「不可逆」的？</h3><h5 id="沒有密鑰"><a href="#沒有密鑰" class="headerlink" title="沒有密鑰"></a>沒有密鑰</h5><p>單純是一個複雜的數學計算，不涉及密鑰</p>
-<h5 id="訊號丟失"><a href="#訊號丟失" class="headerlink" title="訊號丟失"></a>訊號丟失</h5><p>輸出是固定長度的，輸入的值過大，固定長度的輸出無法記錄所有輸入的資訊，有些輸入資訊會被丟棄，就無法透過輸出重建輸入</p>
+<h3 id="為什麼雜湊是「不可逆」的？"><a href="#為什麼雜湊是「不可逆」的？" class="headerlink" title="為什麼雜湊是「不可逆」的？"></a>為什麼雜湊是「不可逆」的？</h3><h5 id="沒有密鑰"><a href="#沒有密鑰" class="headerlink" title="沒有密鑰"></a>沒有密鑰</h5><p>單純是一個複雜的數學計算，不涉及密鑰。</p>
+<h5 id="訊號丟失"><a href="#訊號丟失" class="headerlink" title="訊號丟失"></a>訊號丟失</h5><p>輸出是固定長度的，輸入的值過大，固定長度的輸出無法記錄所有輸入的資訊，有些輸入資訊會被丟棄，就無法透過輸出重建輸入。</p>
+<h3 id="keccak256-和-SHA3-是同一個東西嗎？"><a href="#keccak256-和-SHA3-是同一個東西嗎？" class="headerlink" title="keccak256 和 SHA3 是同一個東西嗎？"></a>keccak256 和 SHA3 是同一個東西嗎？</h3><h5 id="SHA3"><a href="#SHA3" class="headerlink" title="SHA3"></a>SHA3</h5><p>NIST美國國家標準暨技術研究在2015公布的第三代雜湊演算法。</p>
+<h5 id="keccak256"><a href="#keccak256" class="headerlink" title="keccak256"></a>keccak256</h5><p>早期 NIST 在決定 SHA3 時的候選者，可以說是SHA3的前身。</p>
+<h5 id="他們是同一個東西嗎？"><a href="#他們是同一個東西嗎？" class="headerlink" title="他們是同一個東西嗎？"></a>他們是同一個東西嗎？</h5><p>他們不是同一個雜湊演算法， keccak256 是NIST在選定第三代雜湊演算法時的勝力候選者，不過在 2015 年發表 SHA3 的時候有更改了計算規則，因此若將相同的輸出放入 SHA-3 與 Keccak256 會得到不同的雜湊值</p>
+<h3 id="為什麼以太坊不用標準的-SHA3？"><a href="#為什麼以太坊不用標準的-SHA3？" class="headerlink" title="為什麼以太坊不用標準的 SHA3？"></a>為什麼以太坊不用標準的 SHA3？</h3><p>在Ethereum中，Hash Function 是 keccak256，為什麼不是SHA3，因為Ethereum在開發時，SHA3 還沒被發佈，因此採用 keccak256。</p>
+<h3 id="如何在程式中計算-keccak256？不同資料類型（字串、數字、地址）怎麼處理？"><a href="#如何在程式中計算-keccak256？不同資料類型（字串、數字、地址）怎麼處理？" class="headerlink" title="如何在程式中計算 keccak256？不同資料類型（字串、數字、地址）怎麼處理？"></a>如何在程式中計算 keccak256？不同資料類型（字串、數字、地址）怎麼處理？</h3><p>Solidity 內建函式 keccak256()，但 keccak256 的輸入型態是 bytes，所以在處理不同資料的時候要先透過abi.encode將資料變成bytes。</p>
+<h5 id="abi-encode"><a href="#abi-encode" class="headerlink" title="abi.encode()"></a>abi.encode()</h5><p>將所有資料都轉32bytes，空的會補0。</p>
+<h5 id="abi-encodePacked"><a href="#abi-encodePacked" class="headerlink" title="abi.encodePacked()"></a>abi.encodePacked()</h5><p>保留資料原本的長度，不補零。<br>用 abi.encode 編碼完之後再去用 keccak256 做 Hash</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: MIT</span><br><span class="line">pragma solidity ^0.8.20;</span><br><span class="line"></span><br><span class="line">contract Hash &#123;</span><br><span class="line">    function hashexample(address addr) internal pure returns (bytes32) &#123;</span><br><span class="line">        return keccak256(abi.encode(addr));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="如何從推導出私鑰-公鑰-地址"><a href="#如何從推導出私鑰-公鑰-地址" class="headerlink" title="如何從推導出私鑰 -&gt; 公鑰 -&gt; 地址"></a>如何從推導出私鑰 -&gt; 公鑰 -&gt; 地址</h3><p>私鑰 隨機 256bit 32 bytes 64hex<br>→ 橢圓曲線乘法<br>公鑰<br>→ keccak256 取後 20bytes 加 0x<br>地址 0x+40Hex</p>
+<h3 id="ECDSA-簽名為什麼需要私鑰？公鑰的作用是什麼？"><a href="#ECDSA-簽名為什麼需要私鑰？公鑰的作用是什麼？" class="headerlink" title="ECDSA 簽名為什麼需要私鑰？公鑰的作用是什麼？"></a>ECDSA 簽名為什麼需要私鑰？公鑰的作用是什麼？</h3><p>在ETH交易時發送者需要對交易簽名以讓節點確認是交易者本人發出的交易，在這之中就是使用 ECDSA 簽名進行。簽名會產生 r,s,v 並發送給節點，節點會將交易資訊進行 Hash，並透過 Hash 後的交易資訊與 r,s,v 計算出公鑰，並將公鑰Hash 得到後二十位，接著再驗證發送交易的地址是否符合得出的地址。</p>
+<h5 id="ECDSA簽名"><a href="#ECDSA簽名" class="headerlink" title="ECDSA簽名"></a>ECDSA簽名</h5><p>交易發送者會使用私鑰對 Hash 過的交易訊息簽名。私鑰對 Hash 的訊息簽名過後會產生三個值 r,s,v ， r,s 是簽名的結果，而 v 則是可以透過 r 跟 s 計算出公鑰。</p>
+<h5 id="為什麼需要私鑰？"><a href="#為什麼需要私鑰？" class="headerlink" title="為什麼需要私鑰？"></a>為什麼需要私鑰？</h5><p>產生簽名 r,s,v，計算公鑰</p>
+<h5 id="公鑰的作用？"><a href="#公鑰的作用？" class="headerlink" title="公鑰的作用？"></a>公鑰的作用？</h5><p>公鑰可以得出地址，在以太坊中，地址的產生是公鑰進行 keccak256 雜湊後取後20位</p>
+<h5 id="ecrecover-如何從簽名還原出地址？"><a href="#ecrecover-如何從簽名還原出地址？" class="headerlink" title="ecrecover 如何從簽名還原出地址？"></a>ecrecover 如何從簽名還原出地址？</h5><p>ecrecover將（Hash後的訊息, r, s, v）經過計算後得出公鑰，再取後 20 位得到地址</p>
+<h3 id="對任意文字計算-keccak256，用私鑰簽名，並且用-ecrecover-還原地址"><a href="#對任意文字計算-keccak256，用私鑰簽名，並且用-ecrecover-還原地址" class="headerlink" title="對任意文字計算 keccak256，用私鑰簽名，並且用 ecrecover 還原地址"></a>對任意文字計算 keccak256，用私鑰簽名，並且用 ecrecover 還原地址</h3><div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; ethers &#125; = <span class="built_in">require</span>(<span class="string">&quot;hardhat&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> msg = <span class="string">&quot;Hello world&quot;</span>;</span><br><span class="line">    <span class="keyword">const</span> msg_bytes = ethers.<span class="title function_">toUtf8Bytes</span>(msg);</span><br><span class="line">    <span class="keyword">const</span> wallet = ethers.<span class="property">Wallet</span>.<span class="title function_">createRandom</span>();</span><br><span class="line">    <span class="keyword">const</span> walletadderss = wallet.<span class="property">address</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> sign = <span class="keyword">await</span> wallet.<span class="title function_">signMessage</span>(msg_bytes); <span class="comment">// 內建hash加EIP-191前綴辨識簽名</span></span><br><span class="line">    <span class="keyword">const</span> addr = <span class="keyword">await</span> ethers.<span class="title function_">verifyMessage</span>(msg_bytes, sign);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// const hash_msg = ethers.keccak256(msg_bytes);</span></span><br><span class="line">    <span class="comment">// const signature = wallet.signingKey.sign(hash_msg);  // 直接簽 hash 回傳物件</span></span><br><span class="line">    <span class="comment">// const addr = ethers.recoverAddress(hash_msg, signature.serialized); //signature.serialized組合簽名</span></span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;recovered:&quot;</span>, addr);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;wallet:&quot;</span>, walletadderss);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;match:&quot;</span>, addr === walletadderss);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">main</span>().<span class="title function_">catch</span>(<span class="variable language_">console</span>.<span class="property">error</span>);</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<p>參考資料<br><a class="link"   target="_blank" rel="noopener" href="https://zhung.com.tw/article/%E6%B7%BA%E8%AB%87encryption%E5%92%8Chash/" >https://zhung.com.tw/article/%E6%B7%BA%E8%AB%87encryption%E5%92%8Chash/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://vocus.cc/article/61d6fd44fd8978000157e475" >https://vocus.cc/article/61d6fd44fd8978000157e475 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193762" >https://ithelp.ithome.com.tw/articles/10193762 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/m/articles/10208884" >https://ithelp.ithome.com.tw/m/articles/10208884 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/m/articles/10208884" >https://ithelp.ithome.com.tw/m/articles/10208884 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.binance.com/zh-TC/academy/glossary/keccak" >https://www.binance.com/zh-TC/academy/glossary/keccak <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/SHA-3" >https://zh.wikipedia.org/zh-tw/SHA-3 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
         </div>
 
@@ -432,13 +493,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2025/09/27/%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"
+                        href="/2025/12/08/ETH-Transaction/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">非對稱式加密</span>
+                                <span class="post-nav-title-item">ETH Transaction</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -448,10 +509,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2025/09/27/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E6%AF%94%E7%89%B9%E5%B9%A3/"
+                        href="/2025/11/24/%E5%88%A4%E6%96%B7%E5%9C%B0%E5%9D%80%E6%98%AF%E5%B8%B3%E6%88%B6%E6%88%96%E5%90%88%E7%B4%84/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">區塊鏈與比特幣</span>
+                                <span class="post-nav-title-item">判斷地址是帳戶或合約</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -472,8 +533,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hash Function</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A%E7%B0%A1%E4%BB%8B"><span class="nav-text">雜湊簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9B%9C%E6%B9%8A%E6%98%AF%E3%80%8C%E4%B8%8D%E5%8F%AF%E9%80%86%E3%80%8D%E7%9A%84%EF%BC%9F"><span class="nav-text">為什麼雜湊是「不可逆」的？</span></a></li></ol>
+        <div class="page-title">雜湊、加密與數位簽章</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A%E5%92%8C%E5%8A%A0%E5%AF%86%E6%9C%89%E4%BB%80%E9%BA%BC%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-text">雜湊和加密有什麼不同？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86"><span class="nav-text">加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%B0%8D%E7%A8%B1%E6%80%A7%E5%8A%A0%E5%AF%86"><span class="nav-text">非對稱性加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%BD%E5%90%8D"><span class="nav-text">簽名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%BD%E5%90%8D%E8%88%87%E5%8A%A0%E5%AF%86%E7%9A%84%E5%B7%AE%E5%88%A5"><span class="nav-text">簽名與加密的差別</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A"><span class="nav-text">雜湊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9B%9C%E6%B9%8A%E6%98%AF%E3%80%8C%E4%B8%8D%E5%8F%AF%E9%80%86%E3%80%8D%E7%9A%84%EF%BC%9F"><span class="nav-text">為什麼雜湊是「不可逆」的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keccak256-%E5%92%8C-SHA3-%E6%98%AF%E5%90%8C%E4%B8%80%E5%80%8B%E6%9D%B1%E8%A5%BF%E5%97%8E%EF%BC%9F"><span class="nav-text">keccak256 和 SHA3 是同一個東西嗎？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%B8%8D%E7%94%A8%E6%A8%99%E6%BA%96%E7%9A%84-SHA3%EF%BC%9F"><span class="nav-text">為什麼以太坊不用標準的 SHA3？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8%E7%A8%8B%E5%BC%8F%E4%B8%AD%E8%A8%88%E7%AE%97-keccak256%EF%BC%9F%E4%B8%8D%E5%90%8C%E8%B3%87%E6%96%99%E9%A1%9E%E5%9E%8B%EF%BC%88%E5%AD%97%E4%B8%B2%E3%80%81%E6%95%B8%E5%AD%97%E3%80%81%E5%9C%B0%E5%9D%80%EF%BC%89%E6%80%8E%E9%BA%BC%E8%99%95%E7%90%86%EF%BC%9F"><span class="nav-text">如何在程式中計算 keccak256？不同資料類型（字串、數字、地址）怎麼處理？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%BE%9E%E6%8E%A8%E5%B0%8E%E5%87%BA%E7%A7%81%E9%91%B0-%E5%85%AC%E9%91%B0-%E5%9C%B0%E5%9D%80"><span class="nav-text">如何從推導出私鑰 -&gt; 公鑰 -&gt; 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECDSA-%E7%B0%BD%E5%90%8D%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E7%A7%81%E9%91%B0%EF%BC%9F%E5%85%AC%E9%91%B0%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">ECDSA 簽名為什麼需要私鑰？公鑰的作用是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8D%E4%BB%BB%E6%84%8F%E6%96%87%E5%AD%97%E8%A8%88%E7%AE%97-keccak256%EF%BC%8C%E7%94%A8%E7%A7%81%E9%91%B0%E7%B0%BD%E5%90%8D%EF%BC%8C%E4%B8%A6%E4%B8%94%E7%94%A8-ecrecover-%E9%82%84%E5%8E%9F%E5%9C%B0%E5%9D%80"><span class="nav-text">對任意文字計算 keccak256，用私鑰簽名，並且用 ecrecover 還原地址</span></a></li></ol>
 
     </div>
 </div>

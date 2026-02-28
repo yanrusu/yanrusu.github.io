@@ -13,21 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/2025/09/27/hash-function/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2025/11/17/verify-contract/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+        <meta name="description" content="Etherscan API Keyhttps:&#x2F;&#x2F;etherscan.io&#x2F; 到etherscan register 取得API Key  Use hardhat set API Keynpx hardhat vars set “varible name” Examplevarible name: ETHERSCAN 12npx hardhat vars set ETHERSCAN✔ Enter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hash Function">
-<meta property="og:url" content="https://yanrusu.github.io/2025/09/27/Hash-Function/index.html">
+<meta property="og:title" content="Verify Contract">
+<meta property="og:url" content="https://yanrusu.github.io/2025/11/17/Verify-Contract/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
-<meta property="og:description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+<meta property="og:description" content="Etherscan API Keyhttps:&#x2F;&#x2F;etherscan.io&#x2F; 到etherscan register 取得API Key  Use hardhat set API Keynpx hardhat vars set “varible name” Examplevarible name: ETHERSCAN 12npx hardhat vars set ETHERSCAN✔ Enter">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-27T08:02:44.000Z">
-<meta property="article:modified_time" content="2026-02-28T08:54:07.734Z">
+<meta property="article:published_time" content="2025-11-17T08:58:14.000Z">
+<meta property="article:modified_time" content="2026-02-28T09:00:26.630Z">
 <meta property="article:author" content="Yan Ru Su">
+<meta property="article:tag" content="Hardhat">
 <meta name="twitter:card" content="summary">
     
     
@@ -40,7 +41,7 @@
     
     <title>
         
-            Hash Function -
+            Verify Contract -
         
         Ru&#39;s Blog
     </title>
@@ -358,7 +359,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Hash Function</h1>
+                <h1 class="article-title-regular">Verify Contract</h1>
             
             </div>
             
@@ -378,20 +379,47 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-09-27 16:02:44</span>
-        <span class="mobile">2025-09-27 16:02:44</span>
+        <span class="desktop">2025-11-17 16:58:14</span>
+        <span class="mobile">2025-11-17 16:58:14</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-02-28 16:54:07</span>
-            <span class="mobile">2026-02-28 16:54:07</span>
+            <span class="desktop">2026-02-28 17:26</span>
+            <span class="mobile">2026-02-28 17:26</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Hardhat/">Hardhat</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -409,19 +437,28 @@
 
 
         <div class="article-content markdown-body">
-            <h3 id="雜湊簡介"><a href="#雜湊簡介" class="headerlink" title="雜湊簡介"></a>雜湊簡介</h3><p>把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。</p>
-<p>不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc -&gt; SHA256(abc) -&gt; ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abd -&gt; SHA256(abd) -&gt; a52d159f262b2c6ddb724a61840befc36eb30c88877a4030b65cbe86298449c9</span><br></pre></td></tr></table></figure></div>
-<p>雜湊不算是加密，沒有金鑰，雜湊是不可逆的，無法透過雜湊值推回輸入資料。</p>
-<h3 id="為什麼雜湊是「不可逆」的？"><a href="#為什麼雜湊是「不可逆」的？" class="headerlink" title="為什麼雜湊是「不可逆」的？"></a>為什麼雜湊是「不可逆」的？</h3><h5 id="沒有密鑰"><a href="#沒有密鑰" class="headerlink" title="沒有密鑰"></a>沒有密鑰</h5><p>單純是一個複雜的數學計算，不涉及密鑰</p>
-<h5 id="訊號丟失"><a href="#訊號丟失" class="headerlink" title="訊號丟失"></a>訊號丟失</h5><p>輸出是固定長度的，輸入的值過大，固定長度的輸出無法記錄所有輸入的資訊，有些輸入資訊會被丟棄，就無法透過輸出重建輸入</p>
-
+            <h3 id="Etherscan-API-Key"><a href="#Etherscan-API-Key" class="headerlink" title="Etherscan API Key"></a>Etherscan API Key</h3><p><a class="link"   target="_blank" rel="noopener" href="https://etherscan.io/" >https://etherscan.io/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>到etherscan register 取得API Key </p>
+<h3 id="Use-hardhat-set-API-Key"><a href="#Use-hardhat-set-API-Key" class="headerlink" title="Use hardhat set API Key"></a>Use hardhat set API Key</h3><p>npx hardhat vars set “varible name”</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>varible name: ETHERSCAN</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx hardhat vars set <span class="variable constant_">ETHERSCAN</span></span><br><span class="line">✔ <span class="title class_">Enter</span> <span class="attr">value</span>: · **********************************   </span><br></pre></td></tr></table></figure></div>
+<h3 id="Hardhat-config-js-use-etherscan-api-key"><a href="#Hardhat-config-js-use-etherscan-api-key" class="headerlink" title="Hardhat.config.js use etherscan api key"></a>Hardhat.config.js use etherscan api key</h3><p>In module.exports add</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">etherscan</span>: &#123;</span><br><span class="line">  <span class="attr">apiKey</span>: vars.<span class="title function_">get</span>(<span class="string">&quot;ETHERSCAN&quot;</span>),</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+<h3 id="Use-verify-commad"><a href="#Use-verify-commad" class="headerlink" title="Use verify commad"></a>Use verify commad</h3><p>npx hardhat verify –network “network name” address</p>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><p>network:arbitrumSepolia<br>address:0xE8F6DAb9045c9Ce68D37eA95e416D54E7E5678Ef</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hardhat verify --network arbitrumSepolia <span class="number">0xE8F6DAb9045c9Ce68D37eA95e416D54E7E5678Ef</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="If-success"><a href="#If-success" class="headerlink" title="If success"></a>If success</h3><div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Successfully</span> submitted source code <span class="keyword">for</span> contract</span><br><span class="line">contracts/token.<span class="property">sol</span>:<span class="title class_">Token</span> at <span class="number">0xE8F6DAb9045c9Ce68D37eA95e416D54E7E5678Ef</span></span><br><span class="line"><span class="keyword">for</span> verification on the block explorer. <span class="title class_">Waiting</span> <span class="keyword">for</span> verification result...</span><br><span class="line"></span><br><span class="line"><span class="title class_">Successfully</span> verified contract <span class="title class_">Token</span> on the block explorer.</span><br><span class="line"><span class="attr">https</span>:<span class="comment">//sepolia.arbiscan.io/address/0xE8F6DAb9045c9Ce68D37eA95e416D54E7E5678Ef#code</span></span><br></pre></td></tr></table></figure></div>
         </div>
 
         
 
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Hardhat/">#Hardhat</a>&nbsp;
+                    </li>
+                
+            </ul>
         
 
         
@@ -432,13 +469,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2025/09/27/%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"
+                        href="/2025/11/24/EIP-1559%E3%80%81EOA-and-CA/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">非對稱式加密</span>
+                                <span class="post-nav-title-item">EIP-1559、EOA and CA</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -448,10 +485,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2025/09/27/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E6%AF%94%E7%89%B9%E5%B9%A3/"
+                        href="/2025/11/10/What-is-nonce/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">區塊鏈與比特幣</span>
+                                <span class="post-nav-title-item">What is nonce?</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -472,8 +509,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hash Function</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A%E7%B0%A1%E4%BB%8B"><span class="nav-text">雜湊簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9B%9C%E6%B9%8A%E6%98%AF%E3%80%8C%E4%B8%8D%E5%8F%AF%E9%80%86%E3%80%8D%E7%9A%84%EF%BC%9F"><span class="nav-text">為什麼雜湊是「不可逆」的？</span></a></li></ol>
+        <div class="page-title">Verify Contract</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Etherscan-API-Key"><span class="nav-text">Etherscan API Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-hardhat-set-API-Key"><span class="nav-text">Use hardhat set API Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hardhat-config-js-use-etherscan-api-key"><span class="nav-text">Hardhat.config.js use etherscan api key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-verify-commad"><span class="nav-text">Use verify commad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1"><span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-success"><span class="nav-text">If success</span></a></li></ol>
 
     </div>
 </div>

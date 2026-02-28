@@ -13,21 +13,24 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/2025/09/27/hash-function/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2026/01/15/特殊函數/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+        <meta name="description" content="receive() and fallback()合約裡的特殊函數，用來應對一些特殊情況，宣告的時候不用加 function。 receive()專門用來接收 ETH ，只處理有值沒有 data 的情況，宣告不用加 function 但ㄧ定要有 external 跟 payable，不能有引數，不能有回傳值。 1receive() external payable&amp;#123;&amp;#125; fallb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hash Function">
-<meta property="og:url" content="https://yanrusu.github.io/2025/09/27/Hash-Function/index.html">
+<meta property="og:title" content="特殊函數">
+<meta property="og:url" content="https://yanrusu.github.io/2026/01/15/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B8/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
-<meta property="og:description" content="雜湊簡介把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。 不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。 1abc -&gt; SHA256(abc) -&gt; ba7816bf8f">
+<meta property="og:description" content="receive() and fallback()合約裡的特殊函數，用來應對一些特殊情況，宣告的時候不用加 function。 receive()專門用來接收 ETH ，只處理有值沒有 data 的情況，宣告不用加 function 但ㄧ定要有 external 跟 payable，不能有引數，不能有回傳值。 1receive() external payable&amp;#123;&amp;#125; fallb">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-27T08:02:44.000Z">
-<meta property="article:modified_time" content="2026-02-28T08:54:07.734Z">
+<meta property="article:published_time" content="2026-01-15T14:12:24.000Z">
+<meta property="article:modified_time" content="2026-02-28T14:27:58.765Z">
 <meta property="article:author" content="Yan Ru Su">
+<meta property="article:tag" content="Ethereum">
+<meta property="article:tag" content="Smart Contract">
+<meta property="article:tag" content="Solidity">
 <meta name="twitter:card" content="summary">
     
     
@@ -40,7 +43,7 @@
     
     <title>
         
-            Hash Function -
+            特殊函數 -
         
         Ru&#39;s Blog
     </title>
@@ -358,7 +361,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Hash Function</h1>
+                <h1 class="article-title-regular">特殊函數</h1>
             
             </div>
             
@@ -378,20 +381,55 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-09-27 16:02:44</span>
-        <span class="mobile">2025-09-27 16:02:44</span>
+        <span class="desktop">2026-01-15 22:12:24</span>
+        <span class="mobile">2026-01-15 22:12:24</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-02-28 16:54:07</span>
-            <span class="mobile">2026-02-28 16:54:07</span>
+            <span class="desktop">2026-02-28 22:27:58</span>
+            <span class="mobile">2026-02-28 22:27:58</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ethereum/">Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Smart-Contract/">Smart Contract</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Solidity/">Solidity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -409,19 +447,77 @@
 
 
         <div class="article-content markdown-body">
-            <h3 id="雜湊簡介"><a href="#雜湊簡介" class="headerlink" title="雜湊簡介"></a>雜湊簡介</h3><p>把資料輸入一個函式輸出一串亂數，稱為雜湊值（Hash），函式稱為雜湊函式。</p>
-<p>不同的輸入產出的亂數都不同。同樣的輸入會得到相同的輸出，而儘管輸入只差一個字輸出就會截然不同，但若不同的輸入產出同樣的輸出則稱為碰撞，但他發生的機率是極低的，另外不論資料的長度輸入同個Hash Function都會得到相同長度的雜湊值。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc -&gt; SHA256(abc) -&gt; ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abd -&gt; SHA256(abd) -&gt; a52d159f262b2c6ddb724a61840befc36eb30c88877a4030b65cbe86298449c9</span><br></pre></td></tr></table></figure></div>
-<p>雜湊不算是加密，沒有金鑰，雜湊是不可逆的，無法透過雜湊值推回輸入資料。</p>
-<h3 id="為什麼雜湊是「不可逆」的？"><a href="#為什麼雜湊是「不可逆」的？" class="headerlink" title="為什麼雜湊是「不可逆」的？"></a>為什麼雜湊是「不可逆」的？</h3><h5 id="沒有密鑰"><a href="#沒有密鑰" class="headerlink" title="沒有密鑰"></a>沒有密鑰</h5><p>單純是一個複雜的數學計算，不涉及密鑰</p>
-<h5 id="訊號丟失"><a href="#訊號丟失" class="headerlink" title="訊號丟失"></a>訊號丟失</h5><p>輸出是固定長度的，輸入的值過大，固定長度的輸出無法記錄所有輸入的資訊，有些輸入資訊會被丟棄，就無法透過輸出重建輸入</p>
+            <h3 id="receive-and-fallback"><a href="#receive-and-fallback" class="headerlink" title="receive() and fallback()"></a>receive() and fallback()</h3><p>合約裡的特殊函數，用來應對一些特殊情況，宣告的時候不用加 function。</p>
+<h3 id="receive"><a href="#receive" class="headerlink" title="receive()"></a>receive()</h3><p>專門用來接收 ETH ，只處理有值沒有 data 的情況，宣告不用加 function 但ㄧ定要有 external 跟 payable，不能有引數，不能有回傳值。</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">receive</span>() external payable&#123;&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="fallback"><a href="#fallback" class="headerlink" title="fallback()"></a>fallback()</h3><p>處理當data function selector 對不上 contract 內 function 的情況，一定要加 external ，要收款要記得加 payable ， solidity &gt; 0.8.1 可以有引數跟回傳值。</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fallback</span>() external &#123;&#125;</span><br></pre></td></tr></table></figure></div>
+<p>fallback其中一個用途是代理合約 proxy contract。</p>
+<h3 id="代理合約"><a href="#代理合約" class="headerlink" title="代理合約"></a>代理合約</h3><p>代理合約是固定一個地址不動，不過所有的呼叫會進到 fallback， fallback 會指向另一個合約再去用其他 contract 的邏輯，不過最終的 data 是存在 proxy contract，這樣可以做到主要一個地址不換，如果要 upgrade contract 只要重新指向一個新 address 即可。</p>
+<h3 id="觸發特殊函數的邏輯"><a href="#觸發特殊函數的邏輯" class="headerlink" title="觸發特殊函數的邏輯"></a>觸發特殊函數的邏輯</h3><p>有 value → 看有沒有data<br>  有 data → fallback()<br>  沒有 data → 看有沒有 receive<br>      有 receive → receive()<br>      沒 receive→ fallback()</p>
+<h3 id="如果-input-data-value-都有，合約也-fallback-receive-都有，最終是會跑哪一個？"><a href="#如果-input-data-value-都有，合約也-fallback-receive-都有，最終是會跑哪一個？" class="headerlink" title="如果 input data &amp; value 都有，合約也 fallback &amp; receive 都有，最終是會跑哪一個？"></a>如果 input data &amp; value 都有，合約也 fallback &amp; receive 都有，最終是會跑哪一個？</h3><p>有 data， function selector 對不上直接進 fallback()。</p>
+<h3 id="transfer-and-send"><a href="#transfer-and-send" class="headerlink" title="transfer and send"></a>transfer and send</h3><p>transfer() 和 send() 是 Solidity 中用來發送 ETH 的內建方法<br>會傳送一筆只有 value 但沒有 data 的 Tx，邏輯上會優先進到 receive()，但如果沒有 receive()，會到 payable fallback()。</p>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Address</span>.<span class="title function_">transfer</span>(amount);</span><br><span class="line"><span class="title class_">Address</span>.<span class="title function_">send</span>(amount); </span><br></pre></td></tr></table></figure></div>
+<p>兩個的差別是 transfer 會直接 revert ， send 只會回傳 bool。如果轉帳 function 裡有其他邏輯 bool 會需要額外處理，避免自行設計的紀錄已經減少但轉帳失敗。</p>
+<h3 id="transfer-and-send-的問題"><a href="#transfer-and-send-的問題" class="headerlink" title="transfer and send 的問題"></a>transfer and send 的問題</h3><p>transfer and send 只能提供給 2300 gas 給接收方合約使用，所以如果 receive 或 fallback 裡的邏輯過於複雜，操作過多消耗太多 gas 就會失敗，交易失敗就會被revert。</p>
+<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Address</span>.<span class="property">call</span>&#123;<span class="attr">value</span>: ,<span class="attr">gas</span>: &#125;(<span class="string">&quot;data&quot;</span>);</span><br></pre></td></tr></table></figure></div>
+<p>因應transfer and send 只能提供 2300gas 的限制，要使用沒有限制的 call。<br>回傳值是bool（代表成功失敗）跟 bytes（函數的回傳值）</p>
+<h3 id="發送-ETH-的三種方式安全性對比：transfer-send-call"><a href="#發送-ETH-的三種方式安全性對比：transfer-send-call" class="headerlink" title="發送 ETH 的三種方式安全性對比：transfer, send, call&#x3D;"></a>發送 ETH 的三種方式安全性對比：<code>transfer</code>, <code>send</code>, <code>call</code>&#x3D;</h3><table>
+<thead>
+<tr>
+<th>method</th>
+<th>gas limit</th>
+<th>tx fail</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>transfer</td>
+<td>2300</td>
+<td>revert</td>
+</tr>
+<tr>
+<td>send</td>
+<td>2300</td>
+<td>return false</td>
+</tr>
+<tr>
+<td>call</td>
+<td>non</td>
+<td>return false</td>
+</tr>
+<tr>
+<td>transfer 會直接 revert 不用作後續處理，send 只會回傳 bool 但要做另外處理，可是他們的 gas 只有 2300 沒辦法執行複雜合約，這兩個 function 的安全性相比應該是 transfer &gt;send。因爲 transfer 會直接 revert。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>call，return bool，沒有 gas 限制，但視合約本身安全性可能會面對重入攻擊（ B 合約先向 A 合約提一次錢收到之後在 receive() 又提一次，如果 A 合約是先轉帳後改狀態就會被重複扣款），transfer 與 send 有 gas 限制就沒辦法在合約裡做那麽多複雜的操作。因此 call 的安全性 &lt; transfer 跟 send，不過優勢在於call 有 gas 的靈活度。<br>總體安全性 transfer &gt;send &gt; call，但考慮複雜度 transfer 跟 send 很可能就用不了。</p>
+<h3 id="沒有receive-是否就無法接收ether了，如果不是，可以透過哪些方法"><a href="#沒有receive-是否就無法接收ether了，如果不是，可以透過哪些方法" class="headerlink" title="沒有receive()是否就無法接收ether了，如果不是，可以透過哪些方法"></a>沒有receive()是否就無法接收ether了，如果不是，可以透過哪些方法</h3><ol>
+<li>fallback() 加 payable</li>
+<li>自定義其他 function 寫 payable</li>
+<li>selfdestruct(addr) 強制發送ETH，不論有沒有 receive fallback payable</li>
+</ol>
 
         </div>
 
         
 
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Ethereum/">#Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Smart-Contract/">#Smart Contract</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Solidity/">#Solidity</a>&nbsp;
+                    </li>
+                
+            </ul>
         
 
         
@@ -429,29 +525,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2025/09/27/%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">非對稱式加密</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2025/09/27/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E6%AF%94%E7%89%B9%E5%B9%A3/"
+                        href="/2026/01/06/%E7%9B%A3%E8%81%BD%E8%88%87%E9%81%8E%E6%BF%BE/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">區塊鏈與比特幣</span>
+                                <span class="post-nav-title-item">監聽與過濾</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -472,8 +553,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hash Function</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E6%B9%8A%E7%B0%A1%E4%BB%8B"><span class="nav-text">雜湊簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9B%9C%E6%B9%8A%E6%98%AF%E3%80%8C%E4%B8%8D%E5%8F%AF%E9%80%86%E3%80%8D%E7%9A%84%EF%BC%9F"><span class="nav-text">為什麼雜湊是「不可逆」的？</span></a></li></ol>
+        <div class="page-title">特殊函數</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#receive-and-fallback"><span class="nav-text">receive() and fallback()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#receive"><span class="nav-text">receive()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fallback"><span class="nav-text">fallback()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E5%90%88%E7%B4%84"><span class="nav-text">代理合約</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%B8%E7%99%BC%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B8%E7%9A%84%E9%82%8F%E8%BC%AF"><span class="nav-text">觸發特殊函數的邏輯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C-input-data-value-%E9%83%BD%E6%9C%89%EF%BC%8C%E5%90%88%E7%B4%84%E4%B9%9F-fallback-receive-%E9%83%BD%E6%9C%89%EF%BC%8C%E6%9C%80%E7%B5%82%E6%98%AF%E6%9C%83%E8%B7%91%E5%93%AA%E4%B8%80%E5%80%8B%EF%BC%9F"><span class="nav-text">如果 input data &amp; value 都有，合約也 fallback &amp; receive 都有，最終是會跑哪一個？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transfer-and-send"><span class="nav-text">transfer and send</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transfer-and-send-%E7%9A%84%E5%95%8F%E9%A1%8C"><span class="nav-text">transfer and send 的問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BC%E9%80%81-ETH-%E7%9A%84%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%AE%89%E5%85%A8%E6%80%A7%E5%B0%8D%E6%AF%94%EF%BC%9Atransfer-send-call"><span class="nav-text">發送 ETH 的三種方式安全性對比：transfer, send, call&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%92%E6%9C%89receive-%E6%98%AF%E5%90%A6%E5%B0%B1%E7%84%A1%E6%B3%95%E6%8E%A5%E6%94%B6ether%E4%BA%86%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%8F%E9%81%8E%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95"><span class="nav-text">沒有receive()是否就無法接收ether了，如果不是，可以透過哪些方法</span></a></li></ol>
 
     </div>
 </div>
