@@ -13,17 +13,24 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/tags/smart-contract/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2026/01/26/erc20/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="Ru&#39;s Blog">
-<meta property="og:url" content="https://yanrusu.github.io/tags/Smart-Contract/index.html">
+        <meta name="description" content="ERC20 與 ETH 的根本差異Push 直接發送代幣Pull 發送方先授權接收方，接收方才能動用代幣ETH使用Push方式，ERC20 Push 與 Pull 兩種都有。 為什麼要設計 Pull 模式？由於衍生代幣會跟其他合約互動，若使用 Push 合約無法處理被動收到的資金。為了讓合約能靈活處理被動接收的資金，而非依賴主動推送。大部分衍生代幣會與其他 DeFi 協議互動，常透過 transf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ERC20">
+<meta property="og:url" content="https://yanrusu.github.io/2026/01/26/ERC20/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
+<meta property="og:description" content="ERC20 與 ETH 的根本差異Push 直接發送代幣Pull 發送方先授權接收方，接收方才能動用代幣ETH使用Push方式，ERC20 Push 與 Pull 兩種都有。 為什麼要設計 Pull 模式？由於衍生代幣會跟其他合約互動，若使用 Push 合約無法處理被動收到的資金。為了讓合約能靈活處理被動接收的資金，而非依賴主動推送。大部分衍生代幣會與其他 DeFi 協議互動，常透過 transf">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-01-26T15:13:35.000Z">
+<meta property="article:modified_time" content="2026-02-28T15:28:23.353Z">
 <meta property="article:author" content="Yan Ru Su">
+<meta property="article:tag" content="Ethereum">
+<meta property="article:tag" content="Smart Contract">
+<meta property="article:tag" content="Solidity">
 <meta name="twitter:card" content="summary">
     
     
@@ -36,7 +43,7 @@
     
     <title>
         
-            Tag: Smart Contract -
+            ERC20 -
         
         Ru&#39;s Blog
     </title>
@@ -154,7 +161,7 @@
                         
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active" 
+                                <a class="" 
                                     href="/tags"  >
                                     
                                         
@@ -263,7 +270,7 @@
             
                 
                     <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
-                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group active" 
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
                         href="/tags"  >
                              
                                 
@@ -349,75 +356,230 @@
             <div class="main-content">
 
                 
-                    <div class="tag-container">
-	<div class="tag-name">
-		<i class="fa-solid fa-tag"></i>&nbsp;Smart Contract
-	</div>
-	<div class="tag-post-list">
-		
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2026</span>
-                <span class="archive-year-post-count">[4]</span>
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">ERC20</h1>
+            
             </div>
-            <ul class="article-list">
-              
-              <li class="article-item" date-is='02-28'>
-                <a href="/2026/02/28/EIP-and-ERC/">
-                  <span class="article-title">EIP and ERC</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='01-26'>
-                <a href="/2026/01/26/ERC20/">
-                  <span class="article-title">ERC20</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='01-15'>
-                <a href="/2026/01/15/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B8/">
-                  <span class="article-title">特殊函數</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='01-06'>
-                <a href="/2026/01/06/%E7%9B%A3%E8%81%BD%E8%88%87%E9%81%8E%E6%BF%BE/">
-                  <span class="article-title">監聽與過濾</span>
-                </a>
-              </li>
-              
-            </ul>
-        </section>
+            
+                    
+        
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/portrait2.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Yan Ru Su</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2026-01-26 23:13:35</span>
+        <span class="mobile">2026-01-26 23:13:35</span>
+        <span class="hover-info">Created</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2025</span>
-                <span class="archive-year-post-count">[1]</span>
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2026-02-28 23:28:23</span>
+            <span class="mobile">2026-02-28 23:28:23</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ethereum/">Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Smart-Contract/">Smart Contract</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Solidity/">Solidity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
             </div>
-            <ul class="article-list">
-              
-              <li class="article-item" date-is='11-24'>
-                <a href="/2025/11/24/%E5%88%A4%E6%96%B7%E5%9C%B0%E5%9D%80%E6%98%AF%E5%B8%B3%E6%88%B6%E6%88%96%E5%90%88%E7%B4%84/">
-                  <span class="article-title">判斷地址是帳戶或合約</span>
-                </a>
-              </li>
-              
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h3 id="ERC20-與-ETH-的根本差異"><a href="#ERC20-與-ETH-的根本差異" class="headerlink" title="ERC20 與 ETH 的根本差異"></a>ERC20 與 ETH 的根本差異</h3><p>Push 直接發送代幣<br>Pull 發送方先授權接收方，接收方才能動用代幣<br>ETH使用Push方式，ERC20 Push 與 Pull 兩種都有。</p>
+<h3 id="為什麼要設計-Pull-模式？"><a href="#為什麼要設計-Pull-模式？" class="headerlink" title="為什麼要設計 Pull 模式？"></a>為什麼要設計 Pull 模式？</h3><p>由於衍生代幣會跟其他合約互動，若使用 Push 合約無法處理被動收到的資金。為了讓合約能靈活處理被動接收的資金，而非依賴主動推送。大部分衍生代幣會與其他 DeFi 協議互動，常透過 transfer、send 或 call 被動收到 ETH&#x2F;token。這些使用 Push 模式的資金不帶特定 selector，會導致呼叫 fallback 或 receive 可能使的合約無法運行正常邏輯。Pull 模式則可以由合約主動發起，進行後續邏輯<br>​</p>
+<h3 id="Pull-流程"><a href="#Pull-流程" class="headerlink" title="Pull 流程"></a>Pull 流程</h3><p>Pull 模式會有兩個步驟，先 Approve ，再 TransferFrom。<br>Approve 代幣持有者先呼叫 <code>approve()</code> 函數，授權可以從自己帳戶中提取指定額度的代幣<br>TransferFrom被授權方再呼叫<code>transferFrom()</code> 函數，從授權者帳戶中提取代幣</p>
+<h3 id="Allowance-機制是什麼：為什麼合約不能直接扣你的錢？"><a href="#Allowance-機制是什麼：為什麼合約不能直接扣你的錢？" class="headerlink" title="Allowance 機制是什麼：為什麼合約不能直接扣你的錢？"></a>Allowance 機制是什麼：為什麼合約不能直接扣你的錢？</h3><p>ERC20 的 Pull模式中，紀錄發收方授權 approve 給接收方的額度，合約只能提取Allowance紀錄的代幣額度。</p>
+<h1 id="transfer-approve-transferFrom-他們的差異與原理"><a href="#transfer-approve-transferFrom-他們的差異與原理" class="headerlink" title="transfer &#x2F; approve &#x2F; transferFrom 他們的差異與原理"></a>transfer &#x2F; approve &#x2F; transferFrom 他們的差異與原理</h1><p>transfer 直接轉帳<br>approve 授權接收方扣錢<br>transferFrom 接收方扣錢</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>transfer</th>
+<th>approve</th>
+<th>transferFrom</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>調用者身份</td>
+<td>代幣持有者</td>
+<td>代幣持有者</td>
+<td>被授權方</td>
+</tr>
+<tr>
+<td>錢動不動</td>
+<td>真的轉帳</td>
+<td>只記權限（在Allowance紀錄）</td>
+<td>真的轉帳</td>
+</tr>
+<tr>
+<td>需要授權</td>
+<td>無</td>
+<td>無</td>
+<td>必須先 approve</td>
+</tr>
+<tr>
+<td>可轉他人的錢</td>
+<td>只能轉自己的</td>
+<td></td>
+<td>可以轉授權人的</td>
+</tr>
+<tr>
+<td>檢查 allowance</td>
+<td>無</td>
+<td>無</td>
+<td>檢查並扣除</td>
+</tr>
+<tr>
+<td>使用場景</td>
+<td>直接轉帳給別人</td>
+<td>授權第三方使用你的代幣</td>
+<td>第三方代你轉帳</td>
+</tr>
+</tbody></table>
+<h1 id="無限授權-Unlimited-Approval-的風險"><a href="#無限授權-Unlimited-Approval-的風險" class="headerlink" title="無限授權 (Unlimited Approval) 的風險"></a>無限授權 (Unlimited Approval) 的風險</h1><p>為了方邊授權type(uint256).max，授權的對象可以將你授權的token用transferFrom全部轉走，ㄧ般情況可能沒事，但如果授權的地址被害錢可能就會被掃光。</p>
+<h1 id="為什麼錢包需要手動加入-ERC20-Token"><a href="#為什麼錢包需要手動加入-ERC20-Token" class="headerlink" title="為什麼錢包需要手動加入 ERC20 Token"></a>為什麼錢包需要手動加入 ERC20 Token</h1><p>ERC20是合約，需要呼叫合約才能顯示代幣資訊，但錢包不知道要查哪些合約地址。錢包也不會知道Token的地址，即使知道所有地址，要查詢全部合約也太過耗時，目前一般來說錢包因此錢包通常採用白名單機制（Uniswap Token Lists 等公開列表），自動查詢常見的token，其餘較小眾的要自動加入。<br>也就是說如果錢包開發者沒有讓錢包去向白名單要ERC20Token合約地址，你就要手動加入所有你所需要用到的Token合約地址。</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Ethereum/">#Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Smart-Contract/">#Smart Contract</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Solidity/">#Solidity</a>&nbsp;
+                    </li>
+                
             </ul>
-        </section>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2026/02/28/EIP-and-ERC/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">EIP and ERC</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2026/01/15/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B8/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">特殊函數</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">ERC20</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ERC20-%E8%88%87-ETH-%E7%9A%84%E6%A0%B9%E6%9C%AC%E5%B7%AE%E7%95%B0"><span class="nav-text">ERC20 與 ETH 的根本差異</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E8%A8%AD%E8%A8%88-Pull-%E6%A8%A1%E5%BC%8F%EF%BC%9F"><span class="nav-text">為什麼要設計 Pull 模式？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull-%E6%B5%81%E7%A8%8B"><span class="nav-text">Pull 流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Allowance-%E6%A9%9F%E5%88%B6%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9A%E7%82%BA%E4%BB%80%E9%BA%BC%E5%90%88%E7%B4%84%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E6%89%A3%E4%BD%A0%E7%9A%84%E9%8C%A2%EF%BC%9F"><span class="nav-text">Allowance 機制是什麼：為什麼合約不能直接扣你的錢？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#transfer-approve-transferFrom-%E4%BB%96%E5%80%91%E7%9A%84%E5%B7%AE%E7%95%B0%E8%88%87%E5%8E%9F%E7%90%86"><span class="nav-text">transfer &#x2F; approve &#x2F; transferFrom 他們的差異與原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%84%A1%E9%99%90%E6%8E%88%E6%AC%8A-Unlimited-Approval-%E7%9A%84%E9%A2%A8%E9%9A%AA"><span class="nav-text">無限授權 (Unlimited Approval) 的風險</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%8C%A2%E5%8C%85%E9%9C%80%E8%A6%81%E6%89%8B%E5%8B%95%E5%8A%A0%E5%85%A5-ERC20-Token"><span class="nav-text">為什麼錢包需要手動加入 ERC20 Token</span></a>
+
+    </div>
+</div>
+        </div>
     
 </div>
 
-	</div>
-</div>
-
-<div class="tag-paginator">
-	<div class="paginator">
-    <span class="page-number current">1</span>
-</div>
-
-</div>
 
 
                 
@@ -455,6 +617,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
