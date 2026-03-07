@@ -26,7 +26,7 @@
 <meta property="og:description" content="receive() and fallback() 合約裡的特殊函數，用來應對一些特殊情況，宣告的時候不用加 function。 receive()專門用來接收 ETH ，只處理有值沒有 data 的情況，宣告不用加 function 但ㄧ定要有 external 跟 payable，不能有引數，不能有回傳值。 1receive() external payable&amp;#123;&amp;#125; fall">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-15T14:12:24.000Z">
-<meta property="article:modified_time" content="2026-02-28T14:41:57.875Z">
+<meta property="article:modified_time" content="2026-03-07T03:20:18.205Z">
 <meta property="article:author" content="Yan Ru Su">
 <meta property="article:tag" content="Ethereum">
 <meta property="article:tag" content="Smart Contract">
@@ -326,8 +326,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-02-28 22:41:57</span>
-            <span class="mobile">2026-02-28 22:41:57</span>
+            <span class="desktop">2026-03-07 11:20:18</span>
+            <span class="mobile">2026-03-07 11:20:18</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -400,7 +400,7 @@
 <h3 id="transfer-and-send-的問題"><a href="#transfer-and-send-的問題" class="headerlink" title="transfer and send 的問題"></a>transfer and send 的問題</h3><p>transfer and send 只能提供給 2300 gas 給接收方合約使用，所以如果 receive 或 fallback 裡的邏輯過於複雜，操作過多消耗太多 gas 就會失敗，交易失敗就會被revert。</p>
 <h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Address</span>.<span class="property">call</span>&#123;<span class="attr">value</span>: ,<span class="attr">gas</span>: &#125;(<span class="string">&quot;data&quot;</span>);</span><br></pre></td></tr></table></figure></div>
 <p>因應transfer and send 只能提供 2300gas 的限制，要使用沒有限制的 call。<br>回傳值是bool（代表成功失敗）跟 bytes（函數的回傳值）</p>
-<h3 id="發送-ETH-的三種方式安全性對比：transfer-send-call"><a href="#發送-ETH-的三種方式安全性對比：transfer-send-call" class="headerlink" title="發送 ETH 的三種方式安全性對比：transfer, send, call&#x3D;"></a>發送 ETH 的三種方式安全性對比：<code>transfer</code>, <code>send</code>, <code>call</code>&#x3D;</h3><table>
+<h3 id="發送-ETH-的三種方式安全性對比：-transfer-send-call"><a href="#發送-ETH-的三種方式安全性對比：-transfer-send-call" class="headerlink" title="發送 ETH 的三種方式安全性對比： transfer, send, call"></a>發送 ETH 的三種方式安全性對比： <code>transfer</code>, <code>send</code>, <code>call</code></h3><table>
 <thead>
 <tr>
 <th>method</th>
@@ -423,13 +423,9 @@
 <td>non</td>
 <td>return false</td>
 </tr>
-<tr>
-<td>transfer 會直接 revert 不用作後續處理，send 只會回傳 bool 但要做另外處理，可是他們的 gas 只有 2300 沒辦法執行複雜合約，這兩個 function 的安全性相比應該是 transfer &gt;send。因爲 transfer 會直接 revert。</td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
-<p>call，return bool，沒有 gas 限制，但視合約本身安全性可能會面對重入攻擊（ B 合約先向 A 合約提一次錢收到之後在 receive() 又提一次，如果 A 合約是先轉帳後改狀態就會被重複扣款），transfer 與 send 有 gas 限制就沒辦法在合約裡做那麽多複雜的操作。因此 call 的安全性 &lt; transfer 跟 send，不過優勢在於call 有 gas 的靈活度。<br>總體安全性 transfer &gt;send &gt; call，但考慮複雜度 transfer 跟 send 很可能就用不了。</p>
+<p>transfer 會直接 revert 不用作後續處理，send 只會回傳 bool 但要做另外處理，可是他們的 gas 只有 2300 沒辦法執行複雜合約，這兩個 function 的安全性相比應該是 transfer &gt;send。因爲 transfer 會直接 revert。</p>
+<p>call，return bool，沒有 gas 限制，但視合約本身安全性可能會面對重入攻擊（ B 合約先向 A 合約提一次錢收到之後在 receive() 又提一次，如果 A 合約是先轉帳後改狀態就會被重複扣款），transfer 與 send 有 gas 限制就沒辦法在合約裡做那麽多複雜的操作。因此 call 的安全性 &lt; transfer 跟 send，不過優勢在於call 有 gas 的靈活度。<br>總體安全性 transfer &gt; send &gt; call，但考慮複雜度 transfer 跟 send 很可能就用不了。</p>
 <h3 id="沒有-receive-是否就無法接收-ether-了，如果不是，可以透過哪些方法"><a href="#沒有-receive-是否就無法接收-ether-了，如果不是，可以透過哪些方法" class="headerlink" title="沒有 receive() 是否就無法接收 ether 了，如果不是，可以透過哪些方法"></a>沒有 receive() 是否就無法接收 ether 了，如果不是，可以透過哪些方法</h3><ol>
 <li>fallback() 加 payable</li>
 <li>自定義其他 function 寫 payable</li>
@@ -507,7 +503,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">特殊函數</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#receive-and-fallback"><span class="nav-text">receive() and fallback()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#receive"><span class="nav-text">receive()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fallback"><span class="nav-text">fallback()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E5%90%88%E7%B4%84"><span class="nav-text">代理合約</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%B8%E7%99%BC%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B8%E7%9A%84%E9%82%8F%E8%BC%AF"><span class="nav-text">觸發特殊函數的邏輯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C-input-data-value-%E9%83%BD%E6%9C%89%EF%BC%8C%E5%90%88%E7%B4%84%E4%B9%9F-fallback-receive-%E9%83%BD%E6%9C%89%EF%BC%8C%E6%9C%80%E7%B5%82%E6%98%AF%E6%9C%83%E8%B7%91%E5%93%AA%E4%B8%80%E5%80%8B%EF%BC%9F"><span class="nav-text">如果 input data &amp; value 都有，合約也 fallback &amp; receive 都有，最終是會跑哪一個？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transfer-and-send"><span class="nav-text">transfer and send</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transfer-and-send-%E7%9A%84%E5%95%8F%E9%A1%8C"><span class="nav-text">transfer and send 的問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BC%E9%80%81-ETH-%E7%9A%84%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%AE%89%E5%85%A8%E6%80%A7%E5%B0%8D%E6%AF%94%EF%BC%9Atransfer-send-call"><span class="nav-text">發送 ETH 的三種方式安全性對比：transfer, send, call&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%92%E6%9C%89-receive-%E6%98%AF%E5%90%A6%E5%B0%B1%E7%84%A1%E6%B3%95%E6%8E%A5%E6%94%B6-ether-%E4%BA%86%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%8F%E9%81%8E%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95"><span class="nav-text">沒有 receive() 是否就無法接收 ether 了，如果不是，可以透過哪些方法</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#receive-and-fallback"><span class="nav-text">receive() and fallback()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#receive"><span class="nav-text">receive()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fallback"><span class="nav-text">fallback()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E5%90%88%E7%B4%84"><span class="nav-text">代理合約</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%B8%E7%99%BC%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B8%E7%9A%84%E9%82%8F%E8%BC%AF"><span class="nav-text">觸發特殊函數的邏輯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C-input-data-value-%E9%83%BD%E6%9C%89%EF%BC%8C%E5%90%88%E7%B4%84%E4%B9%9F-fallback-receive-%E9%83%BD%E6%9C%89%EF%BC%8C%E6%9C%80%E7%B5%82%E6%98%AF%E6%9C%83%E8%B7%91%E5%93%AA%E4%B8%80%E5%80%8B%EF%BC%9F"><span class="nav-text">如果 input data &amp; value 都有，合約也 fallback &amp; receive 都有，最終是會跑哪一個？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transfer-and-send"><span class="nav-text">transfer and send</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transfer-and-send-%E7%9A%84%E5%95%8F%E9%A1%8C"><span class="nav-text">transfer and send 的問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BC%E9%80%81-ETH-%E7%9A%84%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%AE%89%E5%85%A8%E6%80%A7%E5%B0%8D%E6%AF%94%EF%BC%9A-transfer-send-call"><span class="nav-text">發送 ETH 的三種方式安全性對比： transfer, send, call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%92%E6%9C%89-receive-%E6%98%AF%E5%90%A6%E5%B0%B1%E7%84%A1%E6%B3%95%E6%8E%A5%E6%94%B6-ether-%E4%BA%86%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%8F%E9%81%8E%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95"><span class="nav-text">沒有 receive() 是否就無法接收 ether 了，如果不是，可以透過哪些方法</span></a></li></ol>
 
     </div>
 </div>
