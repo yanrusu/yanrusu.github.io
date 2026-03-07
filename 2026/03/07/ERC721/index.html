@@ -13,19 +13,24 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yanrusu.github.io/2023/09/04/text/"/>
+    <link rel="canonical" href="https://yanrusu.github.io/2026/03/07/erc721/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://yanrusu.github.io/2023/09/04/text/index.html">
+        <meta name="description" content="ERC721ERC721 是以太坊上用於非同質化代幣 NFT（Non-Fungible Token）的標準規範，讓每個代幣擁有獨一無二的Token ID。是 2018 年提出的以太坊改進提案（EIP-721），專為不可替代代幣設計。 每個NFT有唯一識別碼，不可分割且不可互換，例如藝術品或遊戲道具。 特點非同質性：每個 ERC-721 代幣都有獨立的 tokenId，彼此不可 1:1 互換。不可分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ERC721">
+<meta property="og:url" content="https://yanrusu.github.io/2026/03/07/ERC721/index.html">
 <meta property="og:site_name" content="Ru&#39;s Blog">
+<meta property="og:description" content="ERC721ERC721 是以太坊上用於非同質化代幣 NFT（Non-Fungible Token）的標準規範，讓每個代幣擁有獨一無二的Token ID。是 2018 年提出的以太坊改進提案（EIP-721），專為不可替代代幣設計。 每個NFT有唯一識別碼，不可分割且不可互換，例如藝術品或遊戲道具。 特點非同質性：每個 ERC-721 代幣都有獨立的 tokenId，彼此不可 1:1 互換。不可分">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-04T11:57:04.000Z">
-<meta property="article:modified_time" content="2023-09-26T12:56:44.598Z">
+<meta property="article:published_time" content="2026-03-07T04:05:52.000Z">
+<meta property="article:modified_time" content="2026-03-07T07:27:29.124Z">
 <meta property="article:author" content="Yan Ru Su">
+<meta property="article:tag" content="Ethereum">
+<meta property="article:tag" content="Smart Contract">
+<meta property="article:tag" content="Solidity">
 <meta name="twitter:card" content="summary">
     
     
@@ -38,7 +43,7 @@
     
     <title>
         
-            Hello World -
+            ERC721 -
         
         Ru&#39;s Blog
     </title>
@@ -294,7 +299,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Hello World</h1>
+                <h1 class="article-title-regular">ERC721</h1>
             
             </div>
             
@@ -314,20 +319,55 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-09-04 19:57:04</span>
-        <span class="mobile">2023-09-04 19:57:04</span>
+        <span class="desktop">2026-03-07 12:05:52</span>
+        <span class="mobile">2026-03-07 12:05:52</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-26 20:56:44</span>
-            <span class="mobile">2023-09-26 20:56:44</span>
+            <span class="desktop">2026-03-07 15:27:29</span>
+            <span class="mobile">2026-03-07 15:27:29</span>
             <span class="hover-info">更新</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ethereum/">Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Smart-Contract/">Smart Contract</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Solidity/">Solidity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -345,11 +385,42 @@
 
 
         <div class="article-content markdown-body">
-            
+            <h3 id="ERC721"><a href="#ERC721" class="headerlink" title="ERC721"></a>ERC721</h3><p>ERC721 是以太坊上用於非同質化代幣 NFT（Non-Fungible Token）的標準規範，讓每個代幣擁有獨一無二的Token ID。是 2018 年提出的以太坊改進提案（EIP-721），專為不可替代代幣設計。 每個NFT有唯一識別碼，不可分割且不可互換，例如藝術品或遊戲道具。</p>
+<h3 id="特點"><a href="#特點" class="headerlink" title="特點"></a>特點</h3><p>非同質性：每個 ERC-721 代幣都有獨立的 tokenId，彼此不可 1:1 互換。<br>不可分割：ERC-721 代幣不能拆分，只能整個轉移（不像 ERC-20 可以有 0.1 顆之類的單位）。<br>Metadata：透過 <code>tokenURI</code> 等欄位連結到描述名稱、圖片、屬性的 JSON 資料，用來呈現 NFT 的內容。</p>
+<h3 id="運作流程"><a href="#運作流程" class="headerlink" title="運作流程"></a>運作流程</h3><p>創作者呼叫智能合約的 <code>mint</code> 函式，合約會產生一個<strong>唯一的 tokenId</strong>（例如 <code>#001</code>、<code>#002</code>…）→ 將這個 tokenId 與<strong>持有者的錢包地址</strong>綁定，記錄在鏈上 → 指定一個 <strong>tokenURI</strong> 指向一個 JSON 檔案，這個 JSON 通常存在 IPFS（去中心化儲存）上，確保圖片和描述無法被竄改。合約內部會維護兩個帳本， <code>tokenId → 持有者地址</code>（誰擁有這個 NFT）以及 <code>持有者地址 → 持有數量</code>（某人擁有幾個 NFT） 任何人都可以呼叫 <code>ownerOf(tokenId)</code> 查詢某個 NFT 現在歸誰所有。</p>
+<p>當 NFT 被買賣或轉贈時，呼叫 <code>transferFrom</code> 或 <code>safeTransferFrom</code>，合約會驗證呼叫者是否是擁有者或被授權者，如果是就會更新鏈上的 <code>tokenId → 新持有者地址</code> 紀錄，與ERC-20相同，ERC-721也有授權機制，例如如果你想在 OpenSea 上架 NFT，你不需要把 NFT 先轉給 OpenSea，而是呼叫 <code>approve</code>，授權 OpenSea 的合約地址可以代替你轉移這個 tokenId。 一旦在OpenSea成交，OpenSea 合約就會直接執行轉移。</p>
+<h3 id="ERC-721-Interface"><a href="#ERC-721-Interface" class="headerlink" title="ERC-721 Interface"></a>ERC-721 Interface</h3><div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">ownerOf</span>(tokenId) <span class="comment">//查詢某個 NFT 的擁有者</span></span><br><span class="line"><span class="title function_">safeTransferFrom</span>(<span class="keyword">from</span>, to, tokenId) <span class="comment">//</span></span><br><span class="line"><span class="title function_">transferFrom</span>(<span class="keyword">from</span>, to, tokenId) <span class="comment">//直接把 NFT 從 from 轉到 to</span></span><br><span class="line"><span class="title function_">approve</span>(to, tokenId) <span class="comment">//轉移這一個 NFT</span></span><br><span class="line"><span class="title function_">getApproved</span>(tokenId) <span class="comment">//檢查某個tokenid是否有授權</span></span><br><span class="line"><span class="title function_">setApprovalForAll</span>(operator, _approved) <span class="comment">// 授權operator操作所有我的token</span></span><br><span class="line"><span class="title function_">isApprovedForAll</span>(owner, operator) <span class="comment">//檢查是否全部授權</span></span><br><span class="line"><span class="title function_">safeTransferFrom</span>(<span class="keyword">from</span>, to, tokenId, data) <span class="comment">//附帶額外 data 的 transfer</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="它解決了什麼問題"><a href="#它解決了什麼問題" class="headerlink" title="它解決了什麼問題"></a>它解決了什麼問題</h3><p>ERC-20屬於同質化也就是所有代幣都能 1 : 1 被互換，每個代幣之間都相等，沒辦法處理，數位藝術與收藏品的所有權證明，現實世界資產代幣化，以及去中心化的遊戲道具。與同質化代幣（如 ERC-20）不同，ERC-721 中每一個 token 代表一個獨特資產，例如一幅數位藝術、遊戲道具或門票。解決了 ERC-20 同質化代幣無法處理獨特資產的問題。</p>
+<h3 id="為什麼需要一個專門的標準來表示-NFT"><a href="#為什麼需要一個專門的標準來表示-NFT" class="headerlink" title="為什麼需要一個專門的標準來表示 NFT"></a>為什麼需要一個專門的標準來表示 NFT</h3><p>需要專門的 NFT 標準（像 ERC‑721），是為了解決統一性問題，保證每個 NFT 都有基本功能，避免每個人都有創造自己的合約寫法，讓所有跟 NFT 有關的錢包、平台、合約可以直接識別與操作，同時也可以降低開發錯誤與安全風險。ERC721幫助設計者專心在NFT本身的設計上，而不是每次都從零設計 NFT 格式。</p>
+<h3 id="ERC721-與-ERC20-的根本差異是什麼？"><a href="#ERC721-與-ERC20-的根本差異是什麼？" class="headerlink" title="ERC721 與 ERC20 的根本差異是什麼？"></a>ERC721 與 ERC20 的根本差異是什麼？</h3><p>ERC20 與 ERC721 的根本差異在於「同質性」，前者為同質化代幣每個 token 完全一樣可互換、可切割，後者為非同質化每個 token 獨一無二不可互換，不可切割。</p>
+<h3 id="為什麼-ERC721-的-token-不可以互換（non-fungible）？"><a href="#為什麼-ERC721-的-token-不可以互換（non-fungible）？" class="headerlink" title="為什麼 ERC721 的 token 不可以互換（non-fungible）？"></a>為什麼 ERC721 的 token 不可以互換（non-fungible）？</h3><p>非同質化代幣互相並不等價，無法直接互換。</p>
+<h3 id="ERC20-的-balanceOf-和-ERC721-的-balanceOf-回傳的意思一樣嗎？有什麼差別？"><a href="#ERC20-的-balanceOf-和-ERC721-的-balanceOf-回傳的意思一樣嗎？有什麼差別？" class="headerlink" title="ERC20 的 balanceOf 和 ERC721 的 balanceOf 回傳的意思一樣嗎？有什麼差別？"></a>ERC20 的 <code>balanceOf</code> 和 ERC721 的 <code>balanceOf</code> 回傳的意思一樣嗎？有什麼差別？</h3><p>函式名稱一樣，回傳型別也都是 <code>uint256 ，</code>都是回傳有多少token，但意義不太相同<br>ERC-20  <code>balanceOf</code> 地址持有多少顆 token	<br>ERC-721 <code>balanceOf</code> 該地址持有多少個 NFT</p>
+<h3 id="tokenId-是什麼？"><a href="#tokenId-是什麼？" class="headerlink" title="tokenId 是什麼？"></a>tokenId 是什麼？</h3><p>tokenId 是 ERC-721 合約內每個 NFT 的識別碼，本質上是一個 <code>uint256</code>，用來區分同一個合約中所有不同的 NFT。</p>
+<h3 id="誰決定-tokenId-的編號規則"><a href="#誰決定-tokenId-的編號規則" class="headerlink" title="誰決定 tokenId 的編號規則?"></a>誰決定 tokenId 的編號規則?</h3><p>由開發者自己決定，可以遞增也可以隨機，或是自己設計</p>
+<h3 id="ownerOf-tokenId-查詢不存在的-tokenId-會發生什麼？"><a href="#ownerOf-tokenId-查詢不存在的-tokenId-會發生什麼？" class="headerlink" title="ownerOf(tokenId) 查詢不存在的 tokenId 會發生什麼？"></a><code>ownerOf(tokenId)</code> 查詢不存在的 tokenId 會發生什麼？</h3><p>呼叫 <code>ownerOf</code> 查詢不存在的 tokenId 會被 revert</p>
+<hr>
+<p>參考資料<br><a class="link"   target="_blank" rel="noopener" href="https://www.gate.com/zh-tw/learn/glossary/erc721" >https://www.gate.com/zh-tw/learn/glossary/erc721 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blockcast.it/2018/04/07/erc721-erc20-ethereum-token-standard/" >https://blockcast.it/2018/04/07/erc721-erc20-ethereum-token-standard/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://easonwang.gitbook.io/blockchain/smart/erc721-fan-li" >https://easonwang.gitbook.io/blockchain/smart/erc721-fan-li <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://docs.openzeppelin.com/contracts/3.x/api/token/erc721" >https://docs.openzeppelin.com/contracts/3.x/api/token/erc721 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.gate.com/zh-tw/learn/glossary/erc721" >https://www.gate.com/zh-tw/learn/glossary/erc721 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
         </div>
 
         
 
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Ethereum/">#Ethereum</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Smart-Contract/">#Smart Contract</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Solidity/">#Solidity</a>&nbsp;
+                    </li>
+                
+            </ul>
         
 
         
@@ -357,21 +428,21 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2025/09/27/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E6%AF%94%E7%89%B9%E5%B9%A3/"
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2026/01/26/ERC20/"
                         >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">區塊鏈與比特幣</span>
-                                <span class="post-nav-item">上一篇</span>
+                                <span class="post-nav-title-item">ERC20</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
                             </span>
                         </a>
                     </div>
-                
                 
             </div>
         
@@ -385,8 +456,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">Hello World</div>
-        
+        <div class="page-title">ERC721</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ERC721"><span class="nav-text">ERC721</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E9%BB%9E"><span class="nav-text">特點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8B%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">運作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ERC-721-Interface"><span class="nav-text">ERC-721 Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%83%E8%A7%A3%E6%B1%BA%E4%BA%86%E4%BB%80%E9%BA%BC%E5%95%8F%E9%A1%8C"><span class="nav-text">它解決了什麼問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E4%B8%80%E5%80%8B%E5%B0%88%E9%96%80%E7%9A%84%E6%A8%99%E6%BA%96%E4%BE%86%E8%A1%A8%E7%A4%BA-NFT"><span class="nav-text">為什麼需要一個專門的標準來表示 NFT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ERC721-%E8%88%87-ERC20-%E7%9A%84%E6%A0%B9%E6%9C%AC%E5%B7%AE%E7%95%B0%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">ERC721 與 ERC20 的根本差異是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC-ERC721-%E7%9A%84-token-%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%BA%92%E6%8F%9B%EF%BC%88non-fungible%EF%BC%89%EF%BC%9F"><span class="nav-text">為什麼 ERC721 的 token 不可以互換（non-fungible）？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ERC20-%E7%9A%84-balanceOf-%E5%92%8C-ERC721-%E7%9A%84-balanceOf-%E5%9B%9E%E5%82%B3%E7%9A%84%E6%84%8F%E6%80%9D%E4%B8%80%E6%A8%A3%E5%97%8E%EF%BC%9F%E6%9C%89%E4%BB%80%E9%BA%BC%E5%B7%AE%E5%88%A5%EF%BC%9F"><span class="nav-text">ERC20 的 balanceOf 和 ERC721 的 balanceOf 回傳的意思一樣嗎？有什麼差別？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tokenId-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">tokenId 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%B0%E6%B1%BA%E5%AE%9A-tokenId-%E7%9A%84%E7%B7%A8%E8%99%9F%E8%A6%8F%E5%89%87"><span class="nav-text">誰決定 tokenId 的編號規則?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ownerOf-tokenId-%E6%9F%A5%E8%A9%A2%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84-tokenId-%E6%9C%83%E7%99%BC%E7%94%9F%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">ownerOf(tokenId) 查詢不存在的 tokenId 會發生什麼？</span></a></li></ol>
 
     </div>
 </div>
